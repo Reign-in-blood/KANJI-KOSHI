@@ -25,6 +25,7 @@ Keep the project lightweight. Do not introduce a framework or backend unless the
 - `dev` is the integration branch.
 - Use `feature/<name>` branches for significant changes.
 - Keep commits focused and readable.
+- After every commit made remotely on GitHub, always give the user the exact Git commands needed to pull that commit locally.
 
 ## Development rules
 - Preserve working behavior while refactoring.
