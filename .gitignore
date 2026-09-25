@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / éditeurs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Dépendances Node éventuelles
+node_modules/
+
+# Builds / cache éventuels
+dist/
+build/
+.cache/
+
+# Variables locales / secrets
+.env
+.env.*
+!.env.example
+
+# Fichiers temporaires
+*.tmp
+*.temp

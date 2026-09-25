@@ -1,0 +1,419 @@
+1,N5,ああ,嗚呼,ah ! / oh ! / hey!
+1,N4,あいさつ,挨拶,salutation
+1,N5,あいさつする,挨拶する,saluer
+1,N4,あいだ,間,entre / parmi / pendant que
+1,N5,あう,会う・遭う[五段],rencontrer / voir (une personne)
+1,N4,あう,合う[五段],convenir
+1,N5,あお,青,bleu (le) / vert (le)
+1,N5,あおい,青い・蒼い,bleu / vert / inexpérimenté
+1,N5,あか,赤,rouge (le)
+1,N5,あかい,赤い,rouge
+1,N4,あかちゃん,赤ちゃん,bébé
+1,N4,あがる,上がる[五段],s'élever / grimper / augmenter
+1,N5,あかるい,明るい,clair
+1,N4,あかんぼう,赤ん坊,bébé
+1,N5,あき,秋,automne
+1,N5,あく,開く[五段],s'ouvrir
+1,N4,あく,空く[五段],se vider / être vide / être disponible
+1,N4,アクセサリー,,accessoire
+1,N5,あける,開ける・明ける[一段],ouvrir
+1,N5,あげる,上げる[一段],donner
+1,N4,あげる,上げる[一段],augmenter
+1,N5,あさ,朝,matin
+1,N4,あさい,浅い,peu profond
+1,N5,あさごはん,朝ご飯,petit-déjeuner
+1,N5,あさって,明後日,après-demain
+1,N4,あさねぼう,朝寝坊,lève-tard
+1,N5,あし,足,jambe
+1,N5,あし,足,pied
+1,N4,あじ,味,goût
+1,N4,アジア,,Asie / asiatique
+1,N5,あした,明日,demain
+1,N4,あす,明日,demain
+2,N5,あそこ,彼処,là-bas (loin du locuteur et de l'interlocuteur)
+2,N5,あそび,遊び,jeu
+2,N5,あそぶ,遊ぶ[五段],jouer
+2,N5,あたたかい,温かい・暖かい,tiède / chaud
+2,N5,あたま,頭,tête
+2,N5,あたらしい,新しい,nouveau
+2,N5,あちら,彼方,ce côté-là (loin du locuteur et de l'interlocuteur)
+2,N5,あつい,暑い,chaud (temps météo.)
+2,N5,あつい,厚い,épais / lourd
+2,N5,あっち,彼方,ce côté-là (loin du locuteur et de l'interlocuteur)
+2,N4,あつまる,集まる[五段],se réunir
+2,N4,あつめる,集める[一段],réunir / rassembler
+2,N5,あと,後,après
+2,N4,アナウンサー,,présentateur (TV / radio)
+2,N5,あなた,貴方,tu / toi / ton (neutre)
+2,N5,あに,兄,grand-frère
+2,N5,あね,姉,grande-soeur
+2,N5,あの,,bien / donc...
+2,N5,あの,彼の,ce (loin du locuteur et de l'interlocuteur)
+2,N5,アパート,,appartement
+2,N5,あびる,浴びる[一段],"prendre une douche / prendre un bain / se dorer au soleil"
+2,N5,あぶない,危ない,dangereux
+2,N4,アフリカ,,Afrique
+2,N5,あまい,甘い,doux / délicieux / sucré
+2,N5,あまり,余り,pas tellement (+négatif)
+2,N5,あめ,雨,pluie
+2,N5,あめ,飴,bonbon / sucrerie
+2,N4,アメリカ,,Amérique
+2,N4,あやまる,謝る[五段],s'excuser
+2,N5,あらう,洗う[五段],laver
+2,N5,ある,有る[五段],avoir / posséder
+2,N5,ある,在る[五段],être / se trouver / exister
+2,N5,あるく,歩く[五段],marcher
+3,N4,アルコール,,alcool
+3,N4,アルバイト,,travail à temps partiel
+3,N5,あれ,彼,ceci (loin du locuteur et de l'interlocuteur)
+3,N4,あんしんする,安心する,être tranquille
+3,N4,あんぜん,安全,sûr
+3,N4,あんな,,comme ça
+3,N4,あんな,,ce genre de
+3,N4,あんない,案内,information / renseignement
+3,N4,あんないする,案内する,guider / faire visiter
+3,N5,あんまり・あまり,余り,excès / trop plein / surplus
+3,N5,いい・よい,良い,plaisant / agréable / bien
+3,N5,いいえ - いえ,否,non
+3,N5,いう,言う[五段],dire
+3,N5,いえ,家,maison
+3,N4,いか,以下,moins de / au dessous-de / sous
+3,N4,いがい,以外,excepté
+3,N4,いかが,如何,comment ?
+3,N4,いがく,医学,médecine
+3,N4,いきる,生きる[一段],vivre / exister
+3,N5,いく・ゆく,行く[五段]s,aller
+3,N5,いくつ,幾つ,combien ? (quantité)
+3,N5,いくら,幾ら,combien ? (prix)
+3,N5,いけ,池,étang
+3,N4,いけん,意見,opinion / avis
+3,N5,いし,石,pierre / roc
+3,N4,いじめる,苛める[一段],embêter
+3,N5,いしゃ,医者,docteur / médecin
+3,N4,いじょう,以上,plus de / au dessus-de / davantage
+3,N5,いす,椅子,chaise
+3,N5,いそがしい,忙しい,occupé
+3,N4,いそぐ,急ぐ[五段],se dépêcher
+3,N5,いたい,痛い,douloureux
+3,N4,いたす,致す[五段],faire (hum)
+4,N5,いただきます,戴きます,"merci pour ce repas (expression de gratitude avant de commencer à manger)"
+4,N4,いただく,戴く・頂く[五段],recevoir (hum) / manger ou boire
+4,N5,いち,一,un
+4,N4,いちど,一度,une fois
+4,N5,いちにち,一日,un jour
+4,N5,いちばん,一番,meilleur / le premier / le numéro 1
+4,N5,いつ,何時,quand ?
+4,N5,いつか,五日,cinquième jour du mois / 5 jours
+4,N5,いっしゅうかん,一週間,une semaine
+4,N5,いっしょ,一緒,ensemble
+4,N4,"いっしょうけんめい",一生懸命,de toute ses forces / très fort
+4,N5,いつつ,五つ,cinq
+4,N4,"いってまいります",行って参ります,à tout à l'heure (se dit en partant lorsqu'on reviendra plus tard) (poli)
+4,N4,"いってらっしゃい",行ってらっしゃい,à tout à l'heure (se dit en partant lorsqu'on reviendra plus tard)
+4,N4,いっぱい,一杯,rempli / plein / ivre
+4,N5,いつも,何時も,toujours / à chaque fois / jamais (+négatif)
+4,N4,いと,糸,fil
+4,N4,いない,以内,avant de / moins de
+4,N4,いなか,田舎,campagne
+4,N5,いぬ,犬,chien
+4,N4,いのる,祈る[五段],prier pour
+4,N5,いま,今,maintenant
+4,N5,いみ,意味,signification / sens
+4,N5,いもうと,妹,petite-soeur
+4,N5,いや,嫌・否,désagréable / déplaisant
+4,N5,"いらっしゃいませ",,bienvenue (dans notre magasin / notre restaurant)
+4,N4,いらっしゃる,[五段],venir / arriver (hum)
+4,N5,いりぐち,入り口,entrée
+4,N5,いる,要る[五段],avoir besoin / nécessiter
+4,N5,いれる,入れる[一段],introduire / mettre dedans / insérer / préparer (du thé / du café)
+4,N5,いろ,色,couleur
+5,N5,いろいろ,色々,divers / variés
+5,N5,うえ,上,dessus
+5,N4,うえる,植える[一段],planter / faire pousser (fleur / arbre...)
+5,N4,うかがう,伺う[五段],demander / visiter (hum)
+5,N4,うけつけ,受付,réception / bureau de renseignement
+5,N4,うける,受ける[一段],recevoir / accepter / passer (un examen par exemple)
+5,N4,うごく,動く[五段],bouger
+5,N5,うしろ,後ろ,derrière
+5,N5,うすい,薄い,mince / pâle (pour une couleur)
+5,N4,うそ,嘘,mensonge
+5,N5,うた,歌,chanson / chant
+5,N5,うたう,歌う[五段],chanter
+5,N5,うち,家・内,maison (sa) / chez soi
+5,N4,うち,中,entre / parmi
+5,N5,うちで,内で,chez soi
+5,N4,うつ,打つ・撃つ[五段],frapper (une personne) / battre
+5,N4,うつくしい,美しい,belle (envers une femme)
+5,N4,うつす,写す[五段],copier / reproduire / filmer / photographier
+5,N4,うつる,移る[五段],déménager / transférer
+5,N4,うで,腕,bras
+5,N4,うまい,上手い,doué / bon
+5,N5,うまれる,生まれる[一段],naître
+5,N5,うみ,海,mer
+5,N4,うら,裏,côté opposé / derrière / partie cachée du regard
+5,N4,うりば,売り場,lieu de vente / surface de vente
+5,N5,うる,売る[五段],vendre
+5,N4,うるさい,煩い,bruyant / gênant
+5,N4,うれしい,嬉しい,content
+5,N5,うわぎ,上着,manteau / veste
+5,N4,うん,,ouais / ok / yeah (marque l'accord)
+5,N4,うんてん,運転,conduite (d'un véhicule)
+5,N4,うんてんしゅ,運転手,conducteur
+5,N4,うんてんする,運転する,conduire
+6,N4,うんどう,運動,mouvement / exercice
+6,N4,うんどうする,運動する,faire de l'exercice
+6,N5,え,絵,image / dessin
+6,N5,えいが,映画,film
+6,N5,えいがかん,映画館,cinéma (bâtiment)
+6,N5,えいご,英語,langue anglaise
+6,N5,ええ,,oui / en effet / c'est cela
+6,N5,えき,駅,gare
+6,N4,エスカレーター,,escalateur
+6,N4,えだ,枝,branche
+6,N4,えらぶ,選ぶ[五段],choisir
+6,N5,エレベーター,,ascenseur
+6,N5,えん,円,yen
+6,N5,えんぴつ,鉛筆,crayon
+6,N4,えんりょ,遠慮,réserve / distance / défiance
+6,N4,えんりょする,遠慮する,être réservé / hésiter
+6,N5,おいしい,美味しい,bon / délicieux
+6,N5,おいでになる,お出でになる[五段],être / arriver (poli)
+6,N4,おいわい,お祝い,célébration
+6,N4,おうせつま,忚接間,salle de réception / salon
+6,N4,おおい,多い,beaucoup / nombreux
+6,N5,おおきい,大きい,grand / large
+6,N4,おおきな,大きな,grand / large
+6,N5,おおぜい,大勢,foule
+6,N4,オートバイ,,moto
+6,N4,オーバー,,pardessus
+6,N5,おかあさん,お母さん,mère (polie)
+6,N4,おかえりなさい,お帰りなさい,bienvenue à la maison (la notre)
+6,N4,おかげ,お陰,soutien / support
+6,N4,おかげさまで,お陰様で,merci à vous
+6,N5,おかし,お菓子,gâteau / confiserie
+6,N4,おかしい,可笑しい,étrange / drôle
+6,N5,おかね,お金,argent / monnaie
+7,N5,おきる,起きる[一段],se réveiller / se lever
+7,N5,おく,置く[五段],poser
+7,N4,おく,億,cent millions
+7,N5,おくさん,奥さん,épouse (d'un autre)
+7,N4,おくじょう,屋上,toît
+7,N4,おくりもの,贈り物,cadeau
+7,N5,おくる,送る[五段],envoyer / expédier / accompagner une personne
+7,N4,おくれる,後れる・遅れる[一段],être en retard / être différé
+7,N5,おげんきで,お元気で,portez-vous bien / prends soin de toi
+7,N4,おこさん,お子さん,enfant de quelqu'un d'autre
+7,N4,おこす,起こす[五段],réveiller / lever
+7,N4,おこなう,行う[五段],faire un numéro / exécuter / faire / avoir lieu
+7,N4,おこる,怒る[五段],se fâcher / se mettre en colère
+7,N5,おじいさん,お爺さん,grand-père (polie)
+7,N4,おしいれ,押入れ,placard
+7,N5,おしえる,教える[一段],enseigner / instruire
+7,N5,おじさん,伯父さん・叔父さん,oncle (polie)
+7,N4,おじょうさん,お嬢さん,jeune femme (poli)
+7,N5,おす,押す[五段],pousser / presser
+7,N5,おそい,遅い,lent
+7,N4,おだいじに,お大事に,bon rétablissement (à une personne malade)
+7,N4,おたく,お宅,votre maison / votre foyer (hum)
+7,N5,おちゃ,お茶,thé
+7,N4,おちる,落ちる[一段],tomber / chuter
+7,N4,おっしゃる,仰る[五段],dire / parler (poli)
+7,N4,おっと,夫,mari / époux
+7,N5,おてあらい,お手洗い,toilettes
+7,N4,おと・ね,音,son (bruit)
+7,N5,おとうさん,お父さん,père (polie)
+7,N5,おとうと,弟,petit-frère
+7,N5,おとこ,男,homme
+7,N5,おとこのこ,男の子,garçon
+7,N4,おとす,落とす[五段],laisser tomber / faire tomber
+8,N5,"おととい・いっさくじつ",一昨日,avant-hier
+8,N5,おととし・いっさくねん,一昨年,l'année avant l'année dernière / il y a 2 ans
+8,N5,おとな,大人,adulte / grande personne
+8,N4,おどり,踊り,danse
+8,N4,おどる,踊る[五段],danser
+8,N4,おどろく,驚く[五段],être surpris / être étonné
+8,N5,おなか,お腹,ventre / estomac
+8,N5,おなじ,同じ,identique / égal
+8,N5,おにいさん,お兄さん,grand-frère (polie)
+8,N5,おねえさん,お姉さん,grande-soeur (polie)
+8,N5,おねがいします,お願いします,s'il vous plaît
+8,N5,おば,伯母・叔母,tante
+8,N5,おばあさん,お婆さん,grand-mère (polie)
+8,N5,おばさん,伯母さん・叔母さん,tante (polie)
+8,N5,"おはようございます",お早う御座います,bonjour (le matin)
+8,N5,おべんとう,お弁当,bentô / panier-repas japonais
+8,N5,おぼえる,覚える[一段],se souvenir
+8,N4,"おまたせしました",お待たせしました,désolé pour l'attente
+8,N5,おまわりさん,お巡りさん,policier (désigné de manière amicale)
+8,N4,おみまい,お見舞い,"le faire de prendre des nouvelles de quelqu'un malade"
+8,N4,おみやげ,お土産,cadeau / souvenir
+8,N4,おめでとうございます,お目出度うご座います,félicitations
+8,N5,おもい,重い,lourd / massif
+8,N4,おもいだす,思い出す[五段],se rappeler / se souvenir
+8,N4,おもう,思う[五段],penser
+8,N5,おもしろい,面白い,intéressant
+8,N4,おもちゃ・がんぐ,玩具,jouet
+8,N4,おもて,表,face / partie visible (contraire de 裏)
+8,N4,おや,親,parents
+8,N5,おやすみなさい,お休みなさい,bonne nuit
+9,N4,おゆ,お湯,eau chaude
+9,N5,およぐ,泳ぐ[五段],nager
+9,N5,おりる,降りる[一段],descendre (d'une montagne / un bus...)
+9,N4,おりる,下りる[一段],descendre (d'une montage / d'un bus...)
+9,N4,おる,居る[五段],être (pour quelque chose d'animé) / exister
+9,N4,おる,折る[五段],plier / rompre / casser
+9,N4,おれい,お礼,courtoisie / politesse
+9,N4,おれる,折れる[一段],être plié / se rompre / se briser
+9,N4,オレンジ,,orange (fruit ou couleur)
+9,N4,おわり,終わり,fin
+9,N5,おわる,終わる[五段],finir
+9,N5,おんがく,音楽,musique / mouvement (musique)
+9,N5,おんな,女,femme
+9,N5,おんなのこ,女の子,fille
+9,N4,か,家,"suffixe pour indiquer une propriété / une relation ou une occupation d'une personne (ferme 農 / fermier 農家)"
+9,N4,カーテン,,rideau
+9,N5,かい,回,compteur pour le nombre de fois
+9,N5,かい,階,compteur pour les étages
+9,N4,かい,会,rassemblement / club / association
+9,N4,かいがん,海岸,rivage / côte (mer)
+9,N4,かいぎ,会議,conférence / réunion / meeting
+9,N5,がいこく,外国,pays étranger
+9,N5,がいこくじん,外国人,étranger
+9,N5,かいしゃ,会社,entreprise
+9,N4,かいじょう,会場,lieu de réunion
+9,N5,かいだん,階段,escaliers
+9,N5,かいもの,買い物,achats / courses
+9,N4,かいわ,会話,conversation / dialogue / discussion
+9,N5,かう,買う[五段],acheter
+9,N5,かえす,返す[五段],retourner / renvoyer quelque chose
+9,N4,かえり,帰り,retour
+9,N4,かえる,変える[一段],changer / varier
+10,N4,かえる,帰る・返る[五段],revenir / retourner (à notre point de départ)
+10,N5,かお,顔,visage
+10,N4,かがく,科学,science
+10,N4,かがみ,鏡,miroir
+10,N5,かかる,掛かる[五段],"prendre (du temps / de l'argent) / être accroché / être suspendu / être couvert (par une assurance / un contrat…)"
+10,N5,かぎ,鍵,clé
+10,N5,かく,書く[五段],écrire
+10,N5,がくせい,学生,étudiant
+10,N4,がくぶ,学部,département universitaire
+10,N5,かげつ,ヶ月・箇月,compteur pour le nombre de mois
+10,N5,かける,掛ける[一段],"accrocher / porter (des lunettes...) / appeler (au téléphone) / prendre / dépenser (de l'argent / du temps)"
+10,N5,かさ,傘,parapluie
+10,N4,かざる,飾る[五段],décorer / orner
+10,N4,かじ,火事,incendie
+10,N4,かしこまりました,畏まりました,bien entendu / bien sûr
+10,N5,かす,貸す[五段],prêter
+10,N5,かぜ,風邪,rhume
+10,N5,かぜ,風,vent
+10,N5,かぞく,家族,famille
+10,N4,ガソリン,,essence
+10,N4,"ガソリンスタンド",,station-essence
+10,N5,かた,方,personne (poli)
+10,N4,かた,方,manière de / méthode de
+10,N5,かたかな,片仮名,katakana (un des syllabaires japonais)
+10,N4,かたち,形,forme / aspect / apparence
+10,N4,かたづける,片づける[一段],nettoyer / ranger
+10,N4,かつ,勝つ[五段],gagner
+10,N5,がつ,月,mois de l'année
+10,N4,かっこう,格好,forme / apparence
+10,N5,がっこう,学校,école
+11,N5,かてい,家庭,famille (sa) / maison (sa)
+11,N5,かど,角,coin (d'une rue / d'un trottoir…) / rebord / bord
+11,N5,かない,家内,épouse (la nôtre)
+11,N4,かなしい,悲しい,triste / mélancolique
+11,N4,かならず,必ず,certainement / surement / sans aucun doute
+11,N5,かね,金,argent / monnaie
+11,N4,かねもち,金持ち,personne riche
+11,N4,かのじょ,彼女,elle / sa (neutre)
+11,N5,かばん,鞄,sac / cartable
+11,N5,かびん,花瓶,vase
+11,N5,かぶる,被る[五段],porter quelque chose sur la tête / être recouvert (d'eau / de poussière…) / supporter (un défaut / un manque…)
+11,N4,かべ,壁,mur / cloison
+11,N4,かまう,構う[五段],s'inquiéter / s'occuper de
+11,N5,かみ,紙,papier
+11,N4,かむ,噛む[五段],mordre / machouiller / ronger
+11,N5,カメラ,,appareil photo
+11,N4,かよう,通う,"faire des aller-et-retours / faire la navette / fréquenter / aller à (une école / une église...)"
+11,N5,かようび,火曜日,mardi
+11,N5,からい,辛い,épicé
+11,N4,ガラス,,verre (matière)
+11,N4,からだ,体,corps
+11,N5,かりる,借りる[一段],emprunter / louer
+11,N5,かるい,軽い,léger / mineur / peu sérieux
+11,N4,かれ,彼,il / son (neutre)
+11,N4,かれら,彼ら・彼等,ils / leurs (neutre)
+11,N5,カレンダー,,calendrier
+11,N5,かわ,川・河,rivière / cours d'eau
+11,N5,かわいい,可愛い,adorable / mignon
+11,N4,かわく,渇く[五段],avoir soif
+11,N4,かわりに,代わりに,à la place de
+11,N4,かわる,変わる[五段],changer / se transformer
+11,N4,かんがえる,考える[一段],réfléchir / considérer
+12,N4,かんけい,関係,relation / rapport / lien
+12,N4,かんごふ,看護婦,infirmière
+12,N5,かんじ,漢字,caractères chinois / kanji
+12,N4,かんたん,簡単,facile / simple
+12,N4,がんばる,頑張る[五段],faire de son mieux / persévérer
+12,N5,き,木,arbre / bois (la matière)
+12,N4,き,気,esprit / humeur
+12,N5,きいろ,黄色,jaune
+12,N5,きいろい,黄色い,jaune
+12,N5,きえる,消える[一段],disparaître / s'éteindre / s'effacer
+12,N4,きかい,機会,chance / opportunité
+12,N5,きく,聞く[五段],écouter / entendre / demander
+12,N4,きけん,危険,dangereux / risqué
+12,N4,きこえる,聞こえる[一段],être audible
+12,N4,きしゃ,汽車,train à vapeur
+12,N4,ぎじゅつ,技術,compétence / technique
+12,N4,きせつ,季節,saison
+12,N4,きそく,規則,règlement / règlementation
+12,N5,きた,北,nord
+12,N5,ギター,,guitare
+12,N5,きたない,汚い,sale
+12,N5,きっさ,喫茶,salon de thé
+12,N5,きっさてん,喫茶店,salon de thé / café (lieux)
+12,N5,きって,切手,timbre
+12,N4,きっと,急度,sûrement / certainement / sans aucun doute
+12,N5,きっぷ,切符,ticket / billet
+12,N4,きぬ,絹,soie
+12,N5,きのう,昨日,hier
+12,N4,きびしい,厳しい,strict / sévère
+12,N4,きぶん,気分,sensation / humeur
+12,N4,きまる,決まる[五段],être décidé / être déterminé
+12,N4,きみ,君,tu / ton / toi (familier)
+12,N4,きめる,決める[一段],décider / déterminer / fixer
+13,N4,きもち,気持ち,sensation / sentiment
+13,N4,きもの,着物,kimono (vêtement traditionnel japonais)
+13,N4,きゃく,客,client / invité
+13,N4,きゅう,急,urgent / soudain
+13,N5,きゅう・く,九,neuf
+13,N4,きゅうこう,急行,train express
+13,N5,ぎゅうにく,牛肉,viande de boeuf
+13,N5,ぎゅうにゅう,牛乳,lait de vache
+13,N5,きょう・こんにち,今日,aujourd'hui
+13,N4,きょういく,教育,éducation / entrainement
+13,N4,きょうかい,教会,église
+13,N5,きょうしつ,教室,salle de classe
+13,N4,きょうそう,競争,compétition / concours
+13,N5,きょうだい,兄弟,frères et soeurs (d'une même famille) / frères
+13,N4,きょうみ,興味,intérêt dans quelque chose
+13,N5,きょねん,去年,année dernière
+13,N5,きらい,嫌い,détesté
+13,N5,きる,切る[五段],couper
+13,N5,きる,着る[一段],enfiler un vêtement sur les épaules / s'habiller
+13,N5,きれい,奇麗・綺麗,beau / propre / joli / clair
+13,N5,キログラム,,kilogramme
+13,N5,キロメートル,,kilomètre
+13,N5,ぎんこう,銀行,banque
+13,N4,きんじょ,近所,voisinage / environs
+13,N5,きんようび,金曜日,vendredi
+13,N4,ぐあい,具合,condition / état
+13,N4,くうき,空気,air / atmosphère
+13,N4,くうこう,空港,aéroport
+13,N4,くさ,草,herbe
+13,N5,くすり,薬,médicament
+13,N4,くださる,下さる[五段],donner / confier
+13,N5,くだもの,果物,fruit
+13,N5,くち,口,bouche / ouverture
+14,N5,くつ,靴,chaussures

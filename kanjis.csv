@@ -1,0 +1,283 @@
+1,N5,一,イチ / イツ,ひと / ひとつ,un
+1,N5,七,シチ,なな / ななつ / なの,sept
+1,N5,万,マン / バン,よろず,dix-mille
+1,N5,三,サン / ゾウ,み / みつ / みっつ,trois
+1,N5,上,ジョウ / ショウ / シャン,うえ / あげる / のぼる,au-dessus / haut / monter / donner
+1,N5,下,カ / ゲ,した / さげる / くだる,au-dessous / descendre / bas / donner / inférieur
+1,N4,不,フ / ブ,-,préfixe de négation / non
+1,N4,世,セイ / セ,よ / さんじゅう,monde / époque / génération
+1,N5,中,チュウ,なか / うち / あたる,dans / dedans / à l'intérieur / milieu / centre / moyenne
+1,N4,主,シュ / ス,ぬし / おも,seigneur / maître / mari
+1,N4,乗,ジョウ,のる,monter (dans un véhicule) / embarquer
+1,N5,九,キュウ / ク,ここの / ここのつ,neuf
+1,N4,事,ジ,こと,fait / chose abstraite / affaire
+1,N5,二,ニ / ジ,ふた / ふたつ / ふたたび,deux
+1,N5,五,ゴ,いつ / いつつ,cinq
+1,N4,京,キョウ / ケイ / キン,みやこ,capitale /10^16
+1,N5,人,ジン / ニン,ひと,être humain / personne
+1,N5,今,コン,いま,maintenant
+1,N4,仕,シ,つかえる,servir / faire
+1,N4,代,ダイ / タイ,かわり,génération / période / substitution / prix
+1,N4,以,イ,もって,par le moyen de / en vue de / comparé à
+1,N5,休,キュウ,やすむ / やすめる,se reposer / repos
+1,N5,会,カイ,あう,réunion / rencontre / parti
+1,N4,低,テイ,ひくい / ひくめる,bas / abaisser
+1,N4,住,ヂュウ,すむ,résider / habiter
+1,N4,体,タイ,からだ,corps
+1,N5,何,カ,なに / なん,quoi / que
+1,N4,作,サク / サ,つくる,fabriquer / produire / réaliser
+1,N4,使,シ,つかう,utiliser
+1,N4,便,ベン / ビン,たより,commodité / lettre / courrier
+1,N4,借,シャク,かりる,emprunter / louer
+2,N4,働,ドウ / リュク / リキ / ロク,はたらく,travailler
+2,N4,元,ゲン / ガン,もと,origine / commencement
+2,N4,兄,ケイ / キョウ,あに,frère ainé / grand-frère
+2,N5,先,セン,さき / まず,avant / devant / précédent
+2,N4,光,コウ,ひかる / ひかり,lumière / éclat / étinceler / briller
+2,N5,入,ニュウ / ジュ,いる / いれる / はいる,entrer / insérer
+2,N5,八,ハチ,や / やつ / やっつ / よう,huit
+2,N5,六,ロク / リク,む,six
+2,N5,円,エン,まるい,cercle / yen / rond
+2,N4,写,シャ,うつす,copier / reproduire
+2,N4,冬,トウ,ふゆ,hiver
+2,N5,出,シュツ / スイ,でる / だす / いでる,sortir / quitter / présence
+2,N5,分,ブン / フン,わける / わかる,comprendre / minute / degré / taux
+2,N4,切,セツ / サイ,きる,couper / trancher
+2,N4,別,ベツ,わかれる / わける,se séparer / séparer / pas en particulier
+2,N5,前,ゼン,まえ,avant / devant
+2,N4,力,リョク / リキ / リイ,ちから,force / puissance
+2,N4,勉,ベン,つとめる,exercice / travail
+2,N4,動,ドウ,うごく,bouger / se déplacer / mouvement
+2,N5,北,ホク,きた,Nord
+2,N4,区,ク,-,arrondissement / district
+2,N4,医,イ,いやす,médecin / médecine
+2,N5,十,ジュウ,とお / と,dix
+2,N5,千,セン,ち,mille
+2,N5,午,ゴ,うま,midi
+2,N5,半,ハン,なかば,moitié / milieu / demi
+2,N5,南,ナン,みなみ,Sud
+2,N4,去,キョ / コ,さる,passé / quitter
+2,N5,友,ユウ,とも,ami
+2,N5,口,コウ / ク,くち,bouche
+2,N5,古,コ,ふるい,vieux / ancien
+2,N4,台,ダイ / タイ,うてな / われ,support / socle
+2,N5,右,ウ / ユウ,みぎ,droite
+3,N4,合,ゴウ / ガ,あう,correspondre / convenir
+3,N4,同,ドウ,おなじ,identique / égal / similaire
+3,N5,名,メイ / ミョウ,な,nom / célèbre / fameux
+3,N4,味,ミ,あじ / あじわう,saveur / goût / apprécier la saveur de
+3,N4,品,ヒン,しな,marchandise / article / compteur de plats
+3,N4,員,イン,-,employé / membre
+3,N4,問,モン,とう,question / demander / interroger
+3,N5,四,シ,よ / よん,quatre
+3,N4,回,カイ,まわる,tourner / tour
+3,N4,図,ズ / ト,はかる,carte / dessin / plan
+3,N5,国,コク,くに,pays
+3,N5,土,ド / ト,つち,sol / terre / terrain
+3,N4,地,チ / ジ,どま,sol / terre / terrain
+3,N4,堂,ドウ,-,temple / sanctuaire / salle
+3,N4,場,ジョウ / チョウ,ば,lieu / place / aire
+3,N4,声,セイ / ショウ,こえ,voix
+3,N4,売,バイ,うる,vendre
+3,N4,夏,カ,なつ,été
+3,N4,夕,セキ,ゆう,soir / soirée
+3,N5,外,ガイ,そと / はずれ,extérieur / dehors
+3,N5,多,タ,おおい,nombreux / beaucoup
+3,N4,夜,ヤ,よる,soir / soirée
+3,N5,大,ダイ / タイ,おおきい,grand
+3,N5,天,テン,あまつ / あめ,cieux / ciel / impérial
+3,N4,太,タイ,ふとい / ふとる,gros / grossir
+3,N5,女,ジョ / ニョ / ニョウ,おんな / め,femme / féminin
+3,N4,好,コウ,このむ / すく / よい / いい,bien aimé / apprécié / agréable
+3,N4,妹,マイ,いもうと,sœur cadette / petite-sœur
+3,N4,姉,シ,あね,sœur ainée / grande-sœur
+3,N4,始,シ,はじめる,commencer / débuter
+3,N5,子,シ / ス / ツ,こ,enfant
+3,N4,字,ジ,あざ / あざな / な,caractère / lettre / mot / hameau
+3,N5,学,ガク,まなぶ,étudier / apprendre / science
+4,N5,安,アン,やすい,bon marché / peu cher / sûr / tranquille
+4,N4,室,シツ,むろ,pièce / appartement / chambre
+4,N4,家,カ,いえ / や / うち,maison
+4,N4,寒,カン,さむい,froid (météorologique)
+4,N5,小,ショウ,ちいさい / こ,petit
+4,N5,少,ショウ,すくない / すこし,un peu / peu de
+4,N4,屋,オク,や,maison / boutique / toît
+4,N5,山,サン / セン,やま,montagne
+4,N5,川,セン,かわ,rivière / fleuve
+4,N4,工,コウ,もく,industrie / construction / fabrication
+4,N5,左,サ / シャ,ひだり,gauche
+4,N4,市,シ,いち,marché / ville
+4,N4,帰,キ,かえる,retourner (chez soi) / aboutir à
+4,N5,年,ネン,とし,année / compteur pour les années
+4,N4,広,コウ,ひろい,large / vaste
+4,N5,店,テン,みせ,magasin / échoppe
+4,N4,度,ト,たび,fois / occurrence / degré (°C/F)
+4,N4,建,ケン / コン,たてる,construire / construction
+4,N4,引,イン,ひく / ひける,cesser / diminuer / jouer (musique) / prendre froid
+4,N4,弟,テイ / ダイ,おとうと,frère cadet / apprenti / disciple
+4,N4,弱,ジャク,よわい,faible
+4,N4,強,キョウ,つよい,fort
+4,N4,待,タイ,まつ,attendre
+4,N5,後,ゴ / コウ,のち / うしろ / あと / おくれる,après / derrière
+4,N4,心,シン,こころ,cœur / esprit
+4,N4,思,シ,おもう,penser
+4,N4,急,キュウ,いそぐ,se dépêcher / urgent / soudain
+4,N4,悪,アク,わるい,mauvais / vice / mal
+4,N4,意,イ,-,volontée / idée
+4,N4,所,ショ,ところ,endroit / lieu / place
+4,N5,手,シュ,て,main
+4,N4,持,ジ,もつ,tenir / avoir
+4,N4,教,キョウ,おしえる,enseigner / religion / foi
+5,N4,文,ブン / モン,ふみ / あや,lettre / écriture / littérature / phrase
+5,N4,料,リョウ,-,matériau / prix / frais
+5,N5,新,シン,あたらしい,nouveau / frais
+5,N4,方,ホウ,かた,personne / direction / manière de
+5,N4,旅,リョ,たび,voyage
+5,N4,族,ゾク,つぎ,famille / clan / bande
+5,N5,日,ニチ / ジツ,ひ / か,jour / soleil / Japon / compteur pour les jours
+5,N4,早,ソウ,はやい,rapide / tôt
+5,N4,明,メイ,あかるい,clair / brillant
+5,N4,映,エイ,うつす / はえる,projection / se refléter / réflexion
+5,N4,春,シュン,はる,printemps
+5,N4,昼,チュウ,ひる,journée / midi
+5,N5,時,ジ,とき,temps / heure
+5,N4,暑,ショ,あつい,chaud (météorologique)
+5,N4,暗,アン,くれる,obscurité / s'assombrir
+5,N4,曜,ヨウ,-,jour de la semaine
+5,N5,書,ショ,かく,écrire
+5,N5,月,ゲツ / ガツ,つき,lune / mois
+5,N4,有,ユウ / ウ,ある,posséder / avoir
+5,N4,服,フク,-,vêtement / avaler (un médicament)
+5,N4,朝,チョウ,あさ,matin
+5,N5,木,モク,き,arbre / bois
+5,N5,本,ホン,もと,livre / essentiel / réalité / compteur pour les objets allongés
+5,N4,村,ソン,むら,village
+5,N5,来,ライ,くる,venir / suivant
+5,N5,東,トウ,ひがし,Est
+5,N4,林,リン,はやし,bois / bosquet
+5,N5,校,コウ,めん,école
+5,N4,森,シン,もり,forêt / bois
+5,N4,業,ギョウ / ゴウ,わざ,activité / profession
+5,N4,楽,ガク / ラク / ゴウ,たのしい / たのしむ,musique / agréable / confortable
+5,N4,歌,カ,うた / うたう,chant / chanter
+5,N4,止,シ,とまる / とめる / やむ,stopper / arrêter / s'arrêter
+6,N4,正,セイ / ショウ,ただしい,juste / correct / exact /10^40
+6,N4,歩,ホ / ブ,あるく,marcher
+6,N5,母,ボ,はは,mère / maman
+6,N5,毎,マイ,ごと,chaque / tous les
+6,N4,民,ミン,たみ,peuple / citoyen
+6,N5,気,キ,いき,esprit / atmosphère / humeur
+6,N5,水,スイ,みず,eau
+6,N4,池,チ,いけ,étang / mare / réservoir
+6,N4,注,チュウ,そそぐ,verser / note / commentaire
+6,N4,洋,ヨウ,-,océan / style occidental
+6,N4,洗,セン,あらう,laver / se laver
+6,N4,海,カイ,うみ,mer / océan
+6,N4,漢,カン,-,Chine des Hans (ethnie majoritaire en Chine)
+6,N5,火,カ,ひ,feu
+6,N5,父,フ,ちち,père / papa
+6,N4,牛,ギュウ,うし,vache
+6,N4,物,ブツ / モツ,もの,objet / chose concrète
+6,N4,特,トク,-,spécial
+6,N4,犬,ケン,いぬ,chien
+6,N4,理,リ,ことわり,raison / principe / logique
+6,N5,生,セイ / ショウ,いきる / うまれる / なま,vivre / naître / cru / authentique
+6,N4,産,サン,うむ / うまれる,production / naissance / donner naissance
+6,N4,用,ヨウ,もちいる,emploi / usage / utiliser
+6,N4,田,デン,た,rizière
+6,N5,男,ダン / ナン,おとこ,homme / mâle
+6,N4,町,チョウ,まち,village / quartier
+6,N4,画,ガ / カク,えがく / かくする / かぎる,image / dessin / peinture / compteur de traits de kanjis
+6,N4,界,カイ,-,monde / frontière
+6,N4,病,ビョウ,やむ / やまい,maladie / malade
+6,N4,発,ハツ / ホツ,たつ / あばく,départ / émettre
+6,N5,白,ハク,しろい,blanc
+6,N5,百,ヒャク / ビャク,もも,cent
+6,N5,目,モク / ボク,め,œil / numérateur ordinal
+7,N4,県,ケン,かける,département / préfecture
+7,N4,真,シン,ま / まこと,vérité / exact / réalité
+7,N4,着,チャク,きる / つく,s'habiller / arriver
+7,N4,知,チ,しる / しらせる,savoir / connaître
+7,N4,短,タン,みじかい,court / bref
+7,N4,研,ケン,とぐ,polir / aiguiser / étudier
+7,N5,社,シャ,やしろ,entreprise / société / temple shinto
+7,N4,私,シ,わたくし / わたし,je / moi / privé
+7,N4,秋,シュウ,あき / とき,automne
+7,N4,究,キュウ,きわめる,recherche / étudier
+7,N5,空,クウ,そら / あく / すく,ciel / creux / vide
+7,N5,立,リツ,たつ,être debout / établir
+7,N4,答,トウ,こたえる / こたえ,solution / réponse / répondre
+7,N4,紙,シ,かみ,papier
+7,N4,終,シュウ,おわる / おえる,finir / fin
+7,N4,習,シュウ,ならう,apprendre / coutume
+7,N4,考,コウ,かんがえる,réfléchir / considérer
+7,N4,者,シャ,もの,personne (quelqu'un)
+7,N5,耳,ジ,みみ,oreille
+7,N5,聞,ブン / モン,きく / きこえる,entendre / écouter / demander
+7,N4,肉,ニク,しし,viande / chair
+7,N4,自,ジ / シ,みずから,soi-même
+7,N4,色,ショク / シキ,いろ,couleur
+7,N5,花,カ,はな,fleur
+7,N4,英,エイ,はなぶさ,brillant / talentueux / Angleterre / anglais
+7,N4,茶,チャ,-,thé
+7,N4,菜,サイ,な,légume
+7,N4,薬,ヤク,くすり,médicament
+7,N5,行,コウ / ギョウ,いく / ゆく / おこなう,aller / voyage
+7,N5,西,セイ,にし,Ouest
+7,N5,見,ケン,みる / みえる / みせる,regarder / voir
+7,N4,親,シン,おや / したしい / したしむ,parents / familié / se familiariser avec
+7,N5,言,ゲン / ゴン,いう,dire / parler
+8,N4,計,ケイ,はかる / はからう,mesurer / peser / penser à / traiter / gérer
+8,N4,試,シ,こころみる / ためす,essayer / tenter / essai / tentative
+8,N5,話,ワ,はなす / はなし,parler / histoire
+8,N5,語,ゴ,かたる / かたらう,langage / mot / raconter
+8,N4,説,セツ / ゼイ,とく,convaincre / persuader / opinion / rumeur
+8,N5,読,ドク / トク,よむ,lire
+8,N5,買,バイ,かう,acheter
+8,N4,貸,タイ,かす,prêter / louer
+8,N4,質,シツ,たち / ただす / もと,substance / matière / qualité
+8,N4,赤,セキ,あかい,rouge
+8,N4,走,ソウ,はしる,courir
+8,N4,起,キ,おきる / おこす,se lever / se réveiller / réveiller
+8,N5,足,ソク,あし / たりる / たす,jambe / être suffisant / ajouter
+8,N5,車,シャ,くるま,véhicule / voiture
+8,N4,転,テン,ころぶ / まろぶ,tourner / rouler
+8,N4,軽,ケイ,かるい,léger / sans importance
+8,N4,近,キン / コン,ちかい,proche / récent
+8,N4,送,ソウ,おくる,envoyer / expédier / escorter
+8,N4,通,ツウ / ツ,とおる / とおり / かよう,circulation / rue / trajet (travail)
+8,N5,週,シュウ,-,semaine
+8,N4,進,シン,すすむ,avancer / progresser
+8,N4,運,ウン,はこぶ,transporter / destin / chance
+8,N5,道,ドウ,みち,voie / route / chemin
+8,N4,遠,エン / オン,とおい,loin / distant
+8,N4,都,ト / ツ,みやこ,capitale / métropôle
+8,N4,重,ジュウ / チョウ,おもい,lourd
+8,N4,野,ヤ,の,campagne / plaine / champ
+8,N5,金,キン / コン,かね,or
+8,N4,銀,ギン,しろがね,argent (minerai)
+8,N5,長,チョウ,ながい,chef / long
+8,N4,門,モン,かど / と,porte / entrée / portail
+8,N4,開,カイ,ひらく / あく / あける,ouvrir / s'ouvrir
+8,N5,間,カン,あいだ / ま,intervalle
+9,N4,院,イン,-,vaste bâtiment public / résidence / hôpital
+9,N4,集,シュウ,あつまる / あつめる,rassembler / réunir
+9,N5,雨,ウ,あめ,pluie
+9,N5,電,デン,-,électricité
+9,N4,青,セイ / ショウ,あおい,bleu / vert / inexpérience
+9,N4,音,オン / イン,おと,son / bruit
+9,N4,頭,トウ / ズ,あたま,tête / compteur pour les gros animaux
+9,N4,題,ダイ,-,sujet / thème
+9,N4,顔,ガン,かお,visage / face
+9,N4,風,フウ / フ,かぜ,vent / air / apparence / manière
+9,N5,食,ショク,たべる,manger / nourriture
+9,N4,飯,ハン,めし,riz cuit / repas
+9,N5,飲,イン / オン,のむ,boire / boisson
+9,N4,館,カン,やかた / たて,grand bâtiment / résidence
+9,N4,首,シュ,くび,cou / compteur de chansons/poèmes
+9,N5,駅,エキ,-,gare
+9,N4,験,ケン / ゲン,あかし / しるし / ためす,examen / vérification
+9,N5,高,コウ,たかい,haut / élevé / cher
+9,N5,魚,ギョ,うお / さかな,poisson
+9,N4,鳥,チョウ,とり,oiseau
+9,N4,黒,コク,くろい,noir

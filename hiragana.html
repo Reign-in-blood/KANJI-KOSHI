@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Révision hiraganas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <div id="menu"></div> <!-- menu -->
+    <div class="menu-container">
+      <div class="checkbox-container">
+        <label>
+          <input class="checkbox" type="checkbox" id="filter-kanas" checked>
+          kanas
+        </label>
+        <label>
+          <input class="checkbox" type="checkbox" id="filter-maru" unchecked>
+          maru
+        </label>
+        <label>
+          <input class="checkbox" type="checkbox" id="filter-tenten" unchecked>
+          tenten
+        </label>
+      </div>
+      <div class="page-selector-container">
+      </div>
+    </div>
+    <div class="hiragana-container">
+      <div id="hiragana-container-1" class="hiragana-box">-</div>
+      <div id="hiragana-container-2" class="hiragana-box">?</div>
+      <div class="btn-container">
+        <button class="btn" id="play-btn">► play</button>
+        <button class="btn" id="skip-btn">Skip</button>
+      </div>
+    </div>
+    <div class="lower-container">
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+      <div class="answear-container">
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div> <!-- footer -->
+  <script src="loader.js"></script>
+  <script src="script_hiragana.js"></script>
+</body>
+
+</html>
