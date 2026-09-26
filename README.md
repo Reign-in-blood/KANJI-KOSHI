@@ -16,6 +16,12 @@ npm run build
 npm run preview
 ```
 
+Core tests:
+
+```bash
+npm test
+```
+
 ## Current V1 scope
 
 KANJI KŌSHI currently targets **JLPT N5 and N4 only**.
