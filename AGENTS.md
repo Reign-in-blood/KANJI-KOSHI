@@ -1,41 +1,43 @@
 # AGENTS.md
 
 ## Project
-KANJI KŌSHI is a lightweight web app for Japanese character revision.
+KANJI KŌSHI is a lightweight web app for timed Japanese character revision: kanji, hiragana and katakana, with JLPT filtering where relevant.
 
-Core use case:
-- Show a kanji, hiragana, or katakana.
-- Give the user a short time to recall it.
-- Reveal the answer.
-- Move to the next character.
-- Allow filtering by JLPT level where relevant.
-
-## Current stack
+## Stack
+- Vite
 - HTML
 - CSS
 - Vanilla JavaScript
-- CSV data files
-- GitHub Pages for the online test version
+- Local learning data
+- GitHub Pages for online testing
 
-Keep the project lightweight. Do not introduce a framework or backend unless there is a clear need.
+Do not introduce a framework or backend without a clear need.
+
+## Structure
+- `src/core/`: quiz logic, timers, persistence
+- `src/data/`: runtime data loading/normalization
+- `src/ui/`: interface
+- `src/styles/`: styles
+- `data/source/`: raw/source learning data
+- `legacy/`: old prototype, kept as reference
 
 ## Git workflow
 - Never work directly on `master`.
-- `master` is the stable/reference branch.
+- `master` is stable/reference.
 - `dev` is the integration branch.
-- Use `feature/<name>` branches for significant changes.
+- Use `feature/<name>` for significant changes.
 - Keep commits focused and readable.
-- After every commit made remotely on GitHub, always give the user the exact Git commands needed to pull that commit locally.
+- After every remote GitHub commit, give the user the exact Git commands needed to pull it locally.
 
 ## Development rules
 - Preserve working behavior while refactoring.
-- Separate UI, quiz logic, timers, settings, and data loading when practical.
-- Load data once and reuse it in memory rather than refetching it for every question.
-- Keep the interface responsive and usable on desktop and mobile.
+- Keep UI, quiz logic, timers, settings and data loading separated.
+- Load learning data once and reuse it in memory.
+- Design for desktop and mobile from the start.
 - Avoid unnecessary dependencies.
-- Do not modify data content silently; data corrections must be explicit.
+- Never alter learning-data content silently; corrections must be explicit.
 
 ## Naming
-Displayed product name: **KANJI KŌSHI**
+Displayed name: **KANJI KŌSHI**
 
-Technical slug/repository name: `KANJI-KOSHI`
+Technical repository/slug: `KANJI-KOSHI`
