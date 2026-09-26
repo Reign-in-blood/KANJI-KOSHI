@@ -48,6 +48,14 @@ export async function getKanjiByLevels(levels = ['N5']) {
   return kanji.filter(entry => selected.has(entry.jlpt))
 }
 
+export function getKanjiMeanings(entry, language = 'fr') {
+  const preferred = entry?.meanings?.[language]
+  if (Array.isArray(preferred) && preferred.length) return preferred
+
+  const english = entry?.meanings?.en
+  return Array.isArray(english) ? english : []
+}
+
 export function clearKanjiCache() {
   kanjiDataPromise = undefined
 }

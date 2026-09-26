@@ -16,26 +16,34 @@ npm run build
 npm run preview
 ```
 
-## Data commands
+## Kanji data
 
-Validate all current data layers:
+The generated kanji layer currently contains 2211 entries across N5-N1:
+
+- N5: 79
+- N4: 166
+- N3: 367
+- N2: 367
+- N1: 1232
+
+French meanings are available for 1992 entries (90.09%). Missing French meanings fall back to English.
+
+Validate current data:
 
 ```bash
 npm run validate:data
 ```
 
-Rebuild the application-ready kanji file from the pinned local OpenJLPT snapshot:
+Rebuild from the pinned local snapshots:
 
 ```bash
 npm run build:data
 ```
 
-Refresh the OpenJLPT snapshot from the pinned upstream revision, then rebuild:
+Refresh all pinned upstream data and rebuild:
 
 ```bash
-npm run sync:openjlpt
-npm run build:data
-npm run validate:data
+npm run sync:data
 ```
 
 ## Structure
@@ -45,7 +53,7 @@ npm run validate:data
 - `src/ui/` - interface rendering and interactions
 - `src/styles/` - application styles
 - `data/source/` - historical/reference PDFs, XLSX and CSV files
-- `data/upstream/` - pinned third-party datasets
+- `data/upstream/` - pinned third-party machine-readable datasets
 - `data/generated/` - normalized application-ready data
 - `legacy/` - previous prototype kept as reference
 - `public/` - static assets served as-is

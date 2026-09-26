@@ -125,6 +125,8 @@ if (Number.isFinite(lastVocabularyPage) && rowsOnLastPage < 5) {
   )
 }
 
+let frenchCoverage = 0
+
 if (!Array.isArray(generated.items)) {
   errors.push('data/generated/kanji.json: items must be an array')
 } else {
@@ -149,6 +151,11 @@ if (!Array.isArray(generated.items)) {
     }
     if (!Array.isArray(entry.meanings?.en) || entry.meanings.en.length === 0) {
       errors.push(`data/generated/kanji.json: ${entry.character} has no English meaning`)
+    }
+    if (!Array.isArray(entry.meanings?.fr)) {
+      errors.push(`data/generated/kanji.json: ${entry.character} has invalid French meanings`)
+    } else if (entry.meanings.fr.length) {
+      frenchCoverage += 1
     }
 
     generatedCounts[entry.jlpt] = (generatedCounts[entry.jlpt] || 0) + 1
@@ -175,6 +182,7 @@ console.log(`Vocabulary CSV:   ${vocabulary.length} rows | ${JSON.stringify(coun
 console.log(
   `Generated kanji:  ${generated.items?.length ?? 0} rows | ${JSON.stringify(generated.counts ?? {})}`,
 )
+console.log(`French meanings:  ${frenchCoverage}/${generated.items?.length ?? 0}`)
 console.log('PDF/XLSX files in data/source are reference material and are not modified by validation.')
 
 if (warnings.length) {

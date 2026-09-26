@@ -9,6 +9,8 @@
     "preview": "vite preview",
     "build:data": "node scripts/build-kanji-data.js",
     "sync:openjlpt": "node scripts/sync-openjlpt.js",
+    "sync:kanjidic2-fr": "node scripts/sync-kanjidic2-fr.js",
+    "sync:data": "npm run sync:openjlpt && npm run sync:kanjidic2-fr && npm run build:data && npm run validate:data",
     "validate:data": "node scripts/validate-data.js"
   },
   "devDependencies": {

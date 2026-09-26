@@ -10,7 +10,9 @@ const LEVEL_ORDER = new Map([
   ['N1', 4],
 ])
 const OPENJLPT_REVISION = 'c42fd9fa3777bfc1775446f7c418d549dfd6e4cf'
+const KANJIDIC2_FR_REVISION = '04014e06019fc9d4af76e6dbb64ec709fe863c4d'
 const UPSTREAM_DIR = resolve('data/upstream/openjlpt/kanji')
+const FRENCH_FILE = resolve('data/upstream/kanjidic2/fr-meanings.json')
 const OUTPUT_FILE = resolve('data/generated/kanji.json')
 
 function assertEntry(entry, file) {
@@ -25,6 +27,9 @@ function assertEntry(entry, file) {
     throw new Error(`${file}: ${entry.character} has invalid readings/meanings`)
   }
 }
+
+const frenchPayload = JSON.parse(await readFile(FRENCH_FILE, 'utf8'))
+const frenchMeanings = frenchPayload.meanings ?? {}
 
 const items = []
 const counts = {}
@@ -58,10 +63,13 @@ for (const levelFile of LEVEL_FILES) {
       kunReadings: entry.kunyomi,
       meanings: {
         en: entry.meanings,
+        fr: frenchMeanings[entry.character] ?? [],
       },
       source: {
         dataset: 'OpenJLPT',
         revision: OPENJLPT_REVISION,
+        frenchMeaningsDataset: 'KANJIDIC2 / EDRDG',
+        frenchMeaningsRevision: KANJIDIC2_FR_REVISION,
       },
     })
   }
@@ -78,6 +86,8 @@ items.sort((a, b) => {
   return a.character.localeCompare(b.character, 'ja')
 })
 
+const frenchCoverage = items.filter(entry => entry.meanings.fr.length > 0).length
+
 const output = {
   schemaVersion: 1,
   source: {
@@ -87,6 +97,13 @@ const output = {
     license: 'CC BY-SA 4.0',
     jlptLevelAssignments: 'Jonathan Waller / Tanos community lists (unofficial)',
     kanjiDetails: 'KANJIDIC2 / EDRDG',
+    frenchMeanings: {
+      dataset: 'KANJIDIC2 via jkindrix/japanese-language-data',
+      repository: 'jkindrix/japanese-language-data',
+      revision: KANJIDIC2_FR_REVISION,
+      license: 'CC BY-SA 4.0',
+      coverage: frenchCoverage,
+    },
   },
   counts,
   total: items.length,
@@ -98,3 +115,4 @@ await writeFile(OUTPUT_FILE, `${JSON.stringify(output, null, 2)}\n`, 'utf8')
 
 console.log(`Generated ${items.length} kanji -> data/generated/kanji.json`)
 console.log(counts)
+console.log(`French meanings: ${frenchCoverage}/${items.length}`)
