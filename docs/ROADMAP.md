@@ -2,11 +2,11 @@
 
 This document is the working roadmap for KANJI KŌSHI.
 
-The goal is to keep development focused: build a useful N5/N4 learning application first, then add progression, accounts and advanced features only when the core experience is solid.
+The goal is to keep development focused: build a useful N5/N4 learning application first, then add quiz modes, progress tracking, accounts and advanced features only when the core experience is solid.
 
 ---
 
-## Product scope
+## Product principles
 
 ### Current V1 target
 
@@ -15,8 +15,27 @@ The goal is to keep development focused: build a useful N5/N4 learning applicati
 - Multiple-choice quizzes
 - Hiragana / katakana later in the same application
 - Desktop and mobile-responsive web app
-- Local-first persistence
 - No mandatory user account
+- No settings/configuration page
+
+### Interaction rule
+
+Avoid setup screens and settings menus.
+
+Controls that users need frequently belong directly on the page where they are used. Everything else should use sensible defaults chosen by KANJI KŌSHI.
+
+Examples:
+
+- Revision page: N5 / N4 selection, pause, reveal, next
+- Quiz page: level and quiz type controls
+- Kana page: hiragana / katakana and group controls
+
+Fixed V1 defaults:
+
+- thinking time: 4 seconds
+- answer display time: 3 seconds
+
+These values can be reconsidered later if real usage shows a need.
 
 ### Later expansion
 
@@ -40,18 +59,19 @@ These are not V1 requirements.
 
 Purpose:
 
-- explain what KANJI KŌSHI does
-- provide quick access to learning modes
-- resume the last session
-- show a small progress summary when progress tracking exists
+- establish the KANJI KŌSHI identity
+- provide direct access to learning modes
+- make Revision immediately visible as the primary V1 action
+- show a small progress summary later when progress tracking exists
 
-Possible actions:
+Primary destinations:
 
-- Start timed revision
-- Start quiz
-- Study kana
-- View progress
-- Open settings
+- Revision
+- Quiz
+- Kana
+- Progress
+
+No settings shortcut or session configuration step.
 
 ---
 
@@ -59,32 +79,30 @@ Possible actions:
 
 Timed kanji revision mode.
 
+The page opens directly into the learning interface. There is no configuration screen before it.
+
 Core flow:
 
 ```text
 Kanji
   ↓
-thinking timer
+4 s thinking time
   ↓
 answer reveal
   ↓
-answer display timer
+3 s answer display
   ↓
 next kanji
 ```
 
-Session options:
+Controls directly on the page:
 
 - N5
 - N4
-- N5 + N4
-- thinking duration
-- answer display duration
-- automatic reveal
-- manual reveal
-- automatic next
-- manual next / skip
+- N5 + N4 by selecting both
 - pause / resume
+- reveal immediately
+- next / skip
 
 Displayed information after reveal:
 
@@ -100,14 +118,14 @@ Displayed information after reveal:
 
 Multiple-choice learning modes.
 
-### Kanji → meaning
+Controls belong directly on the Quiz page.
 
-Example:
+### Kanji → meaning
 
 ```text
 食
 
-What does this kanji mean?
+Que signifie ce kanji ?
 
 ○ boire
 ○ manger
@@ -117,10 +135,8 @@ What does this kanji mean?
 
 ### Meaning → kanji
 
-Example:
-
 ```text
-Which kanji means "manger"?
+Quel kanji signifie « manger » ?
 
 ○ 飲
 ○ 食
@@ -130,10 +146,8 @@ Which kanji means "manger"?
 
 ### Kanji → reading
 
-Example:
-
 ```text
-Which is a valid reading of 食?
+Quelle lecture est valide pour 食 ?
 
 ○ た.べる
 ○ の.む
@@ -143,6 +157,8 @@ Which is a valid reading of 食?
 
 Quiz requirements:
 
+- direct N5 / N4 level controls
+- direct quiz-type controls
 - plausible distractors
 - support for multiple valid readings
 - score tracking
@@ -155,6 +171,13 @@ Quiz requirements:
 ## 4. Kana
 
 Separate learning area for kana.
+
+Controls belong directly on the page:
+
+- Hiragana / Katakana
+- base kana
+- dakuten / handakuten
+- combinations when available
 
 Planned content:
 
@@ -204,44 +227,15 @@ More advanced spaced repetition can be added later.
 
 ---
 
-## 6. Settings
-
-Planned settings:
-
-- default JLPT levels
-- thinking timer
-- answer display timer
-- automatic/manual reveal
-- automatic/manual next
-- interface preferences
-- sound preferences if sound is added later
-
-Settings should be stored locally in V1.
-
----
-
 # User accounts and persistence
 
-## V1: local-first
+## V1
 
-No mandatory account.
+No user account and no preferences/settings system.
 
-Use browser storage for:
+When progress tracking is implemented, browser storage can initially hold learning history locally.
 
-- selected levels
-- timer settings
-- interface preferences
-- quiz history
-- kanji progress
-- learning status
-
-The application should remain usable without a network connection once PWA support is added.
-
-## Architecture requirement
-
-Application code must not depend directly on `localStorage`.
-
-Use `src/core/storage.js` as an abstraction:
+Application code should use `src/core/storage.js` as an abstraction instead of coupling progress logic directly to `localStorage`.
 
 ```text
 Application
@@ -251,17 +245,15 @@ storage.js
 localStorage
 ```
 
-This allows a later architecture such as:
+This preserves a future path to:
 
 ```text
 Application
     ↓
 storage.js
     ↓
-local storage + cloud sync
+local storage + optional cloud sync
 ```
-
-without rewriting the quiz and UI logic.
 
 ## Later: optional account
 
@@ -283,7 +275,7 @@ A cloud account introduces additional requirements:
 - offline conflict handling
 - privacy / GDPR handling
 
-Therefore it is intentionally postponed until the local application is useful on its own.
+It is intentionally postponed until the local application is useful on its own.
 
 ---
 
@@ -291,7 +283,7 @@ Therefore it is intentionally postponed until the local application is useful on
 
 ## Phase 1 — Foundations
 
-Status: substantially complete.
+Status: complete for the current scope.
 
 - [x] Initialize Vite project
 - [x] Establish Git workflow
@@ -308,22 +300,26 @@ Status: substantially complete.
 - [x] Add countdown timer
 - [x] Add automated core tests
 - [x] Add temporary functional browser interface
+- [x] Define initial design system
+- [x] Define product roadmap
 
 ---
 
 ## Phase 2 — UI V1
 
-Status: next major development phase.
+Status: in progress.
 
-Goal: turn the technical prototype into the first real KANJI KŌSHI experience.
+Goal: turn the technical prototype into the first recognizable KANJI KŌSHI experience.
 
-- [ ] Create `feature/ui-v1`
-- [ ] Define global navigation
+- [x] Create `feature/ui-v1`
+- [ ] Build global application shell
+- [ ] Build global navigation
 - [ ] Create Home page
-- [ ] Implement Sakura-inspired visual direction
-- [ ] Create reusable layout/components in vanilla JS
-- [ ] Create revision session configuration screen
-- [ ] Create final revision screen
+- [ ] Apply initial Sakura-inspired visual direction
+- [ ] Create reusable UI structure in vanilla JS
+- [ ] Integrate the existing Revision engine into the new shell
+- [ ] Create final Revision page
+- [ ] Keep N5 / N4 controls directly on Revision page
 - [ ] Display large central kanji
 - [ ] Display JLPT level
 - [ ] Display ON readings
@@ -334,32 +330,20 @@ Goal: turn the technical prototype into the first real KANJI KŌSHI experience.
 - [ ] Add pause/resume
 - [ ] Add reveal
 - [ ] Add next/skip
-- [ ] Add clean end/reset behavior
-- [ ] Support N5 only
-- [ ] Support N4 only
-- [ ] Support N5 + N4
+- [ ] Add clean return-to-home behavior
 - [ ] Make desktop layout responsive
 - [ ] Make mobile layout usable
 - [ ] Test keyboard/mouse/touch interactions
 - [ ] Preserve accessibility basics
 
----
-
-## Phase 3 — Settings and local persistence
-
-- [ ] Implement `src/core/storage.js`
-- [ ] Store selected levels
-- [ ] Store thinking duration
-- [ ] Store answer duration
-- [ ] Store automatic/manual behavior
-- [ ] Restore preferences on page load
-- [ ] Add reset-to-defaults action
-- [ ] Version stored settings for future migrations
+There is deliberately no configuration screen and no Settings page.
 
 ---
 
-## Phase 4 — Multiple-choice quiz
+## Phase 3 — Multiple-choice quiz
 
+- [ ] Create Quiz page
+- [ ] Put level/type controls directly on the page
 - [ ] Add Kanji → meaning quiz
 - [ ] Add Meaning → kanji quiz
 - [ ] Add Kanji → reading quiz
@@ -374,9 +358,10 @@ Goal: turn the technical prototype into the first real KANJI KŌSHI experience.
 
 ---
 
-## Phase 5 — Progress tracking
+## Phase 4 — Progress tracking
 
 - [ ] Define progress data model
+- [ ] Implement `src/core/storage.js`
 - [ ] Record kanji seen
 - [ ] Record correct answers
 - [ ] Record wrong answers
@@ -392,21 +377,22 @@ Goal: turn the technical prototype into the first real KANJI KŌSHI experience.
 
 ---
 
-## Phase 6 — Kana
+## Phase 5 — Kana
 
 - [ ] Audit existing hiragana source
 - [ ] Normalize hiragana data
 - [ ] Add small hiragana
 - [ ] Add combination kana
 - [ ] Add katakana dataset
-- [ ] Create kana learning screen
+- [ ] Create Kana page
+- [ ] Put kana controls directly on the page
 - [ ] Add kana → romaji quiz
 - [ ] Add romaji → kana quiz
 - [ ] Track kana progress separately
 
 ---
 
-## Phase 7 — Advanced learning
+## Phase 6 — Advanced learning
 
 Only after the core application is stable.
 
@@ -423,7 +409,7 @@ Only after the core application is stable.
 
 ---
 
-## Phase 8 — Account and cloud sync
+## Phase 7 — Account and cloud sync
 
 Optional future phase.
 
@@ -441,7 +427,7 @@ Optional future phase.
 
 ---
 
-## Phase 9 — PWA / mobile
+## Phase 8 — PWA / mobile
 
 - [ ] Add web app manifest
 - [ ] Add app icons
@@ -459,6 +445,8 @@ Optional future phase.
 
 To avoid scope creep, do not prioritize these yet:
 
+- Settings/configuration page
+- pre-session configuration screen
 - N3 / N2 / N1
 - mandatory accounts
 - backend
@@ -476,14 +464,14 @@ To avoid scope creep, do not prioritize these yet:
 
 # Current next step
 
-The immediate next development branch should be:
+Current branch:
 
 ```text
 feature/ui-v1
 ```
 
-Primary objective:
+Immediate objective:
 
-> Build a recognizable, responsive KANJI KŌSHI interface around the already working N5/N4 data layer, quiz session engine and timer.
+> Build the Home page and global application shell, then integrate the already working Revision mode into that interface.
 
-The temporary functional test interface should remain replaceable and must not dictate the final visual architecture.
+The UI should follow `docs/DESIGN-SYSTEM.md` and keep controls close to the activity they affect.
