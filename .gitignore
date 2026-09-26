@@ -1,28 +1,24 @@
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# IDE / éditeurs
-.vscode/
-.idea/
-
 # Logs
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Dépendances Node éventuelles
-node_modules/
+node_modules
+dist
+dist-ssr
+*.local
 
-# Builds / cache éventuels
-dist/
-build/
-.cache/
-
-# Variables locales / secrets
-.env
-.env.*
-!.env.example
-
-# Fichiers temporaires
-*.tmp
-*.temp
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
