@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "build:data": "node scripts/build-kanji-data.js",
+    "sync:openjlpt": "node scripts/sync-openjlpt.js",
     "validate:data": "node scripts/validate-data.js"
   },
   "devDependencies": {

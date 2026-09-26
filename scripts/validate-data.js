@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
 const SOURCE = resolve('data/source')
+const GENERATED = resolve('data/generated/kanji.json')
 const JLPT_LEVELS = new Set(['N5', 'N4', 'N3', 'N2', 'N1'])
 
 function parseCsv(text) {
@@ -83,15 +84,17 @@ function duplicateKeys(rows, keyFn) {
   return [...seen.entries()].filter(([, lines]) => lines.length > 1)
 }
 
-const [kanjiText, hiraganaText, vocabText] = await Promise.all([
+const [kanjiText, hiraganaText, vocabText, generatedText] = await Promise.all([
   readFile(resolve(SOURCE, 'kanjis.csv'), 'utf8'),
   readFile(resolve(SOURCE, 'hiragana.csv'), 'utf8'),
   readFile(resolve(SOURCE, 'vocabulairen4.csv'), 'utf8'),
+  readFile(GENERATED, 'utf8'),
 ])
 
 const kanji = parseCsv(kanjiText)
 const hiragana = parseCsv(hiraganaText)
 const vocabulary = parseCsv(vocabText)
+const generated = JSON.parse(generatedText)
 
 const errors = []
 const warnings = []
@@ -122,12 +125,57 @@ if (Number.isFinite(lastVocabularyPage) && rowsOnLastPage < 5) {
   )
 }
 
+if (!Array.isArray(generated.items)) {
+  errors.push('data/generated/kanji.json: items must be an array')
+} else {
+  const seenCharacters = new Set()
+  const generatedCounts = {}
+
+  for (const entry of generated.items) {
+    if (!entry.character || typeof entry.character !== 'string') {
+      errors.push('data/generated/kanji.json: entry without a character')
+      continue
+    }
+    if (!JLPT_LEVELS.has(entry.jlpt)) {
+      errors.push(`data/generated/kanji.json: ${entry.character} has invalid JLPT level ${entry.jlpt}`)
+    }
+    if (seenCharacters.has(entry.character)) {
+      errors.push(`data/generated/kanji.json: duplicate character ${entry.character}`)
+    }
+    seenCharacters.add(entry.character)
+
+    if (!Array.isArray(entry.onReadings) || !Array.isArray(entry.kunReadings)) {
+      errors.push(`data/generated/kanji.json: ${entry.character} has invalid readings`)
+    }
+    if (!Array.isArray(entry.meanings?.en) || entry.meanings.en.length === 0) {
+      errors.push(`data/generated/kanji.json: ${entry.character} has no English meaning`)
+    }
+
+    generatedCounts[entry.jlpt] = (generatedCounts[entry.jlpt] || 0) + 1
+  }
+
+  if (generated.total !== generated.items.length) {
+    errors.push(
+      `data/generated/kanji.json: total=${generated.total}, actual=${generated.items.length}`,
+    )
+  }
+
+  for (const level of JLPT_LEVELS) {
+    if ((generated.counts?.[level] ?? 0) !== (generatedCounts[level] ?? 0)) {
+      errors.push(`data/generated/kanji.json: count mismatch for ${level}`)
+    }
+  }
+}
+
 console.log('KANJI KŌSHI data validation')
 console.log('--------------------------')
-console.log(`Kanji:      ${kanji.length} rows | ${JSON.stringify(countBy(kanji, 1))}`)
-console.log(`Hiragana:   ${hiragana.length} rows | ${JSON.stringify(countBy(hiragana, 0))}`)
-console.log(`Vocabulary: ${vocabulary.length} rows | ${JSON.stringify(countBy(vocabulary, 1))}`)
-console.log('XLSX sources: KanjisN4.xlsx and KanjisN1.xlsx are preserved but not parsed by this validator.')
+console.log(`Legacy kanji CSV: ${kanji.length} rows | ${JSON.stringify(countBy(kanji, 1))}`)
+console.log(`Hiragana CSV:     ${hiragana.length} rows | ${JSON.stringify(countBy(hiragana, 0))}`)
+console.log(`Vocabulary CSV:   ${vocabulary.length} rows | ${JSON.stringify(countBy(vocabulary, 1))}`)
+console.log(
+  `Generated kanji:  ${generated.items?.length ?? 0} rows | ${JSON.stringify(generated.counts ?? {})}`,
+)
+console.log('PDF/XLSX files in data/source are reference material and are not modified by validation.')
 
 if (warnings.length) {
   console.log('\nWarnings:')

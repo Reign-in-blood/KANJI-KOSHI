@@ -1,20 +1,37 @@
 # Data model
 
-Raw source files stay in `data/source/`. Runtime code must not depend on spreadsheet layout or legacy page groupings.
+KANJI KŌSHI separates reference/source material, upstream datasets and application-ready generated data.
+
+## Directories
+
+- `data/source/`: historical/reference PDFs, XLSX and CSV files. Never silently modify these.
+- `data/upstream/`: pinned third-party machine-readable datasets.
+- `data/generated/`: normalized data consumed by the application.
+- `src/data/`: runtime loaders only.
 
 ## Kanji
 
 ```js
 {
   id: "kanji-食",
-  type: "kanji",
   character: "食",
   jlpt: "N5",
-  onReadings: ["ショク"],
-  kunReadings: ["たべる"],
-  meanings: ["manger", "nourriture"]
+  strokes: 9,
+  grade: 2,
+  frequency: 328,
+  onReadings: ["ショク", "ジキ"],
+  kunReadings: ["く.う", "く.らう", "た.べる", "は.む"],
+  meanings: {
+    en: ["eat", "food"]
+  },
+  source: {
+    dataset: "OpenJLPT",
+    revision: "c42fd9fa3777bfc1775446f7c418d549dfd6e4cf"
+  }
 }
 ```
+
+The meanings object is language-keyed so French can be added without changing quiz logic.
 
 ## Kana
 
@@ -30,21 +47,14 @@ Raw source files stay in `data/source/`. Runtime code must not depend on spreads
 
 ## Vocabulary
 
-```js
-{
-  id: "vocab-...",
-  type: "vocabulary",
-  reading: "あいさつ",
-  written: "挨拶",
-  jlpt: "N4",
-  meanings: ["salutation"]
-}
-```
+Vocabulary is not normalized yet. Existing vocabulary CSV files remain reference data until a dedicated vocabulary layer is implemented.
 
 ## Rules
 
-- Support JLPT levels generically from N5 through N1.
-- Store readings and meanings as arrays at runtime.
-- Keep source grouping/page numbers only as optional source metadata.
-- Do not silently correct source content.
-- Validation and normalization happen before data reaches quiz logic.
+- JLPT levels are supported generically from N5 through N1.
+- Modern JLPT kanji-by-level lists are unofficial; the generated dataset records its source.
+- Readings and meanings stay as arrays.
+- Okurigana markers from KANJIDIC2/OpenJLPT are preserved.
+- Legacy page numbers are source metadata only and never drive quiz behavior.
+- Source/reference content is never silently corrected.
+- Runtime code reads generated data, not PDF/XLSX/legacy CSV layouts.
