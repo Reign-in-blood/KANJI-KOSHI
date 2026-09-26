@@ -312,12 +312,12 @@ Status: in progress.
 Goal: turn the technical prototype into the first recognizable KANJI KŌSHI experience.
 
 - [x] Create `feature/ui-v1`
-- [ ] Build global application shell
-- [ ] Build global navigation
-- [ ] Create Home page
-- [ ] Apply initial Sakura-inspired visual direction
-- [ ] Create reusable UI structure in vanilla JS
-- [ ] Integrate the existing Revision engine into the new shell
+- [x] Build global application shell
+- [x] Build global navigation
+- [x] Create Home page
+- [x] Apply initial Sakura-inspired visual direction
+- [x] Create reusable UI structure in vanilla JS
+- [x] Integrate the existing Revision engine into the new shell
 - [ ] Create final Revision page
 - [ ] Keep N5 / N4 controls directly on Revision page
 - [ ] Display large central kanji
