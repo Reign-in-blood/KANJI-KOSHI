@@ -6,7 +6,8 @@ const SOURCE_URL =
   `https://raw.githubusercontent.com/jkindrix/japanese-language-data/${REVISION}/data/core/kanji.json`
 const OPENJLPT_DIR = resolve('data/upstream/openjlpt/kanji')
 const OUTPUT_FILE = resolve('data/upstream/kanjidic2/fr-meanings.json')
-const LEVELS = ['n5', 'n4', 'n3', 'n2', 'n1']
+// V1 scope.
+const LEVELS = ['n5', 'n4']
 
 const targetCharacters = new Set()
 
@@ -43,6 +44,7 @@ const output = {
     revision: REVISION,
     upstream: 'KANJIDIC2 / EDRDG',
     license: 'CC BY-SA 4.0',
+    scope: 'KANJI KŌSHI V1: N5 and N4 only',
     sourceVersion: source.metadata?.source_version ?? null,
     upstreamDictionaryDate: source.metadata?.upstream_dict_date ?? null,
     coverageOfOpenJlptKanji: Object.keys(meanings).length,

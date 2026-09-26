@@ -2,11 +2,17 @@
 
 KANJI KŌSHI separates reference/source material, upstream datasets and application-ready generated data.
 
+## Current scope
+
+V1 actively supports **N5 and N4 only**.
+
+The schema is intentionally level-agnostic so N3, N2 and N1 can be added later without redesigning the data model.
+
 ## Directories
 
 - `data/source/`: historical/reference PDFs, XLSX and CSV files. Never silently modify these.
-- `data/upstream/openjlpt/`: pinned JLPT-level and kanji-detail source.
-- `data/upstream/kanjidic2/`: pinned French meaning enrichment derived from KANJIDIC2.
+- `data/upstream/openjlpt/`: pinned N5/N4 JLPT-level and kanji-detail source.
+- `data/upstream/kanjidic2/`: pinned French meaning enrichment for active N5/N4 kanji.
 - `data/generated/`: normalized data consumed by the application.
 - `src/data/`: runtime loaders only.
 
@@ -29,7 +35,7 @@ KANJI KŌSHI separates reference/source material, upstream datasets and applicat
 }
 ```
 
-The runtime helper prefers French and falls back to English when no French KANJIDIC2 meaning is available.
+The runtime helper prefers French and falls back to English if a future entry lacks a French meaning.
 
 ## Kana
 
@@ -49,7 +55,7 @@ Vocabulary is not normalized yet. Existing vocabulary CSV files remain reference
 
 ## Rules
 
-- JLPT levels are supported generically from N5 through N1.
+- Active V1 levels: N5 and N4.
 - Modern JLPT kanji-by-level lists are unofficial; the generated dataset records its source.
 - Readings and meanings stay as arrays.
 - Okurigana markers are preserved.

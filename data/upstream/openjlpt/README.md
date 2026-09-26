@@ -1,15 +1,16 @@
 # OpenJLPT snapshot
 
-This directory contains a pinned snapshot of the kanji JSON files from OpenJLPT.
+Pinned OpenJLPT kanji data used as the candidate JLPT classification for KANJI KŌSHI V1.
 
-- Repository: evanclan/OpenJLPT
-- Revision: `c42fd9fa3777bfc1775446f7c418d549dfd6e4cf`
-- License: CC BY-SA 4.0
-- Levels: N5 through N1
-- Snapshot counts: N5 79, N4 166, N3 367, N2 367, N1 1232 (2211 total)
+Current active files:
 
-OpenJLPT states that JLPT level assignments are based on Jonathan Waller's Tanos community lists and that kanji details are enriched from KANJIDIC2 / EDRDG. The JLPT organization does not publish official modern kanji-by-level lists.
+- `kanji/n5.json` — 79 kanji
+- `kanji/n4.json` — 166 kanji
 
-See `NOTICE.md` and `LICENSE` in this directory for upstream attribution and license terms.
+Pinned OpenJLPT revision:
 
-Do not edit the snapshot files by hand. Update them with `npm run sync:openjlpt`, then rebuild generated data.
+`c42fd9fa3777bfc1775446f7c418d549dfd6e4cf`
+
+N3, N2 and N1 are intentionally not stored in the V1 snapshot. The sync script can be extended later.
+
+See `NOTICE.md`, `LICENSE` and the repository root `THIRD_PARTY_NOTICES.md`.

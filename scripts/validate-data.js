@@ -3,7 +3,8 @@ import { resolve } from 'node:path'
 
 const SOURCE = resolve('data/source')
 const GENERATED = resolve('data/generated/kanji.json')
-const JLPT_LEVELS = new Set(['N5', 'N4', 'N3', 'N2', 'N1'])
+const VALID_JLPT_LEVELS = new Set(['N5', 'N4', 'N3', 'N2', 'N1'])
+const ACTIVE_JLPT_LEVELS = new Set(['N5', 'N4'])
 
 function parseCsv(text) {
   const rows = []
@@ -67,7 +68,7 @@ function validateColumns(name, rows, expected, errors) {
 
 function validateJlpt(name, rows, index, errors) {
   rows.forEach((row, line) => {
-    if (!JLPT_LEVELS.has(row[index])) {
+    if (!VALID_JLPT_LEVELS.has(row[index])) {
       errors.push(`${name}: line ${line + 1} has invalid JLPT level "${row[index]}"`)
     }
   })
@@ -138,8 +139,10 @@ if (!Array.isArray(generated.items)) {
       errors.push('data/generated/kanji.json: entry without a character')
       continue
     }
-    if (!JLPT_LEVELS.has(entry.jlpt)) {
-      errors.push(`data/generated/kanji.json: ${entry.character} has invalid JLPT level ${entry.jlpt}`)
+    if (!ACTIVE_JLPT_LEVELS.has(entry.jlpt)) {
+      errors.push(
+        `data/generated/kanji.json: ${entry.character} has inactive/invalid level ${entry.jlpt}`,
+      )
     }
     if (seenCharacters.has(entry.character)) {
       errors.push(`data/generated/kanji.json: duplicate character ${entry.character}`)
@@ -167,15 +170,21 @@ if (!Array.isArray(generated.items)) {
     )
   }
 
-  for (const level of JLPT_LEVELS) {
+  for (const level of ACTIVE_JLPT_LEVELS) {
     if ((generated.counts?.[level] ?? 0) !== (generatedCounts[level] ?? 0)) {
       errors.push(`data/generated/kanji.json: count mismatch for ${level}`)
     }
   }
+
+  if (generated.items.length !== 245 || generatedCounts.N5 !== 79 || generatedCounts.N4 !== 166) {
+    warnings.push(
+      `OpenJLPT V1 snapshot count changed: expected N5=79, N4=166, got N5=${generatedCounts.N5 ?? 0}, N4=${generatedCounts.N4 ?? 0}`,
+    )
+  }
 }
 
-console.log('KANJI KŌSHI data validation')
-console.log('--------------------------')
+console.log('KANJI KŌSHI data validation — V1 N5/N4')
+console.log('--------------------------------------')
 console.log(`Legacy kanji CSV: ${kanji.length} rows | ${JSON.stringify(countBy(kanji, 1))}`)
 console.log(`Hiragana CSV:     ${hiragana.length} rows | ${JSON.stringify(countBy(hiragana, 0))}`)
 console.log(`Vocabulary CSV:   ${vocabulary.length} rows | ${JSON.stringify(countBy(vocabulary, 1))}`)

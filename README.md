@@ -16,17 +16,20 @@ npm run build
 npm run preview
 ```
 
-## Kanji data
+## Current V1 scope
 
-The generated kanji layer currently contains 2211 entries across N5-N1:
+KANJI KŌSHI currently targets **JLPT N5 and N4 only**.
 
-- N5: 79
-- N4: 166
-- N3: 367
-- N2: 367
-- N1: 1232
+The generated kanji layer contains:
 
-French meanings are available for 1992 entries (90.09%). Missing French meanings fall back to English.
+- N5: 79 kanji
+- N4: 166 kanji
+- Total: 245 kanji
+- French meanings: 245/245
+
+The data architecture stays extensible to N3, N2 and N1 later, but those levels are intentionally not shipped or loaded in the current V1 dataset.
+
+Modern JLPT kanji-by-level lists are unofficial. See `docs/data-audit-n5-n4.md` for the comparison between the previous GuideDuJaponais-derived list and the current OpenJLPT candidate classification.
 
 Validate current data:
 
@@ -40,7 +43,7 @@ Rebuild from the pinned local snapshots:
 npm run build:data
 ```
 
-Refresh all pinned upstream data and rebuild:
+Refresh the active N5/N4 upstream snapshots and rebuild:
 
 ```bash
 npm run sync:data
@@ -53,8 +56,8 @@ npm run sync:data
 - `src/ui/` - interface rendering and interactions
 - `src/styles/` - application styles
 - `data/source/` - historical/reference PDFs, XLSX and CSV files
-- `data/upstream/` - pinned third-party machine-readable datasets
-- `data/generated/` - normalized application-ready data
+- `data/upstream/` - pinned third-party machine-readable N5/N4 datasets
+- `data/generated/` - normalized application-ready N5/N4 data
 - `legacy/` - previous prototype kept as reference
 - `public/` - static assets served as-is
 

@@ -3,6 +3,11 @@
 ## Project
 KANJI KŌSHI is a lightweight web app for timed Japanese character revision: kanji, hiragana and katakana, with JLPT filtering where relevant.
 
+## Current product scope
+- V1 focuses on JLPT N5 and N4.
+- Keep the architecture extensible to N3, N2 and N1, but do not add higher-level data or UI unless explicitly requested.
+- Source/reference PDFs, XLSX and legacy CSV files must remain untouched.
+
 ## Stack
 - Vite
 - HTML
@@ -18,7 +23,9 @@ Do not introduce a framework or backend without a clear need.
 - `src/data/`: runtime data loading/normalization
 - `src/ui/`: interface
 - `src/styles/`: styles
-- `data/source/`: raw/source learning data
+- `data/source/`: historical/reference learning data
+- `data/upstream/`: pinned third-party machine-readable sources
+- `data/generated/`: application-ready generated data
 - `legacy/`: old prototype, kept as reference
 
 ## Git workflow
@@ -36,6 +43,7 @@ Do not introduce a framework or backend without a clear need.
 - Design for desktop and mobile from the start.
 - Avoid unnecessary dependencies.
 - Never alter learning-data content silently; corrections must be explicit.
+- Treat JLPT level assignments as sourced data, not as an official JLPT list.
 
 ## Naming
 Displayed name: **KANJI KŌSHI**

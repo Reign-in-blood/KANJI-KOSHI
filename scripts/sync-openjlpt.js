@@ -2,7 +2,8 @@ import { mkdir, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
 const REVISION = 'c42fd9fa3777bfc1775446f7c418d549dfd6e4cf'
-const LEVELS = ['n5', 'n4', 'n3', 'n2', 'n1']
+// V1 scope. Extend this array when KANJI KŌSHI starts supporting higher levels.
+const LEVELS = ['n5', 'n4']
 const TARGET = resolve('data/upstream/openjlpt/kanji')
 const BASE_URL = `https://raw.githubusercontent.com/evanclan/OpenJLPT/${REVISION}/data/json/kanji`
 
@@ -30,4 +31,5 @@ for (const level of LEVELS) {
 }
 
 console.log(`Pinned OpenJLPT revision: ${REVISION}`)
+console.log('Active scope: N5 + N4')
 console.log('Run npm run build:data, then npm run validate:data.')

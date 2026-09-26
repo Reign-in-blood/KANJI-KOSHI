@@ -1,4 +1,4 @@
-const JLPT_LEVELS = new Set(['N5', 'N4', 'N3', 'N2', 'N1'])
+const JLPT_LEVELS = new Set(['N5', 'N4'])
 const KANJI_DATA_URL = new URL('../../data/generated/kanji.json', import.meta.url)
 
 let kanjiDataPromise
@@ -40,7 +40,7 @@ export async function getKanjiByLevels(levels = ['N5']) {
 
   for (const level of selected) {
     if (!JLPT_LEVELS.has(level)) {
-      throw new Error(`Unknown JLPT level: ${level}`)
+      throw new Error(`Unsupported JLPT level in the current V1 scope: ${level}`)
     }
   }
 

@@ -1,14 +1,13 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
-const LEVEL_FILES = ['n5', 'n4', 'n3', 'n2', 'n1']
+// V1 scope. Add n3/n2/n1 here later without changing the generated schema.
+const LEVEL_FILES = ['n5', 'n4']
 const LEVEL_ORDER = new Map([
   ['N5', 0],
   ['N4', 1],
-  ['N3', 2],
-  ['N2', 3],
-  ['N1', 4],
 ])
+
 const OPENJLPT_REVISION = 'c42fd9fa3777bfc1775446f7c418d549dfd6e4cf'
 const KANJIDIC2_FR_REVISION = '04014e06019fc9d4af76e6dbb64ec709fe863c4d'
 const UPSTREAM_DIR = resolve('data/upstream/openjlpt/kanji')
@@ -21,7 +20,7 @@ function assertEntry(entry, file) {
     throw new Error(`${file}: entry without character`)
   }
   if (!LEVEL_ORDER.has(entry.level)) {
-    throw new Error(`${file}: ${entry.character} has invalid level "${entry.level}"`)
+    throw new Error(`${file}: ${entry.character} has inactive or invalid level "${entry.level}"`)
   }
   if (!Array.isArray(entry.onyomi) || !Array.isArray(entry.kunyomi) || !Array.isArray(entry.meanings)) {
     throw new Error(`${file}: ${entry.character} has invalid readings/meanings`)
@@ -79,8 +78,8 @@ items.sort((a, b) => {
   const levelDifference = LEVEL_ORDER.get(a.jlpt) - LEVEL_ORDER.get(b.jlpt)
   if (levelDifference) return levelDifference
 
-  const frequencyDifference = (a.frequency ?? Number.MAX_SAFE_INTEGER) -
-    (b.frequency ?? Number.MAX_SAFE_INTEGER)
+  const frequencyDifference =
+    (a.frequency ?? Number.MAX_SAFE_INTEGER) - (b.frequency ?? Number.MAX_SAFE_INTEGER)
   if (frequencyDifference) return frequencyDifference
 
   return a.character.localeCompare(b.character, 'ja')
@@ -90,11 +89,13 @@ const frenchCoverage = items.filter(entry => entry.meanings.fr.length > 0).lengt
 
 const output = {
   schemaVersion: 1,
+  activeLevels: ['N5', 'N4'],
   source: {
     dataset: 'OpenJLPT',
     repository: 'evanclan/OpenJLPT',
     revision: OPENJLPT_REVISION,
     license: 'CC BY-SA 4.0',
+    scope: 'KANJI KŌSHI V1: N5 and N4 only',
     jlptLevelAssignments: 'Jonathan Waller / Tanos community lists (unofficial)',
     kanjiDetails: 'KANJIDIC2 / EDRDG',
     frenchMeanings: {
