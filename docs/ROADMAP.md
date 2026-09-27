@@ -35,7 +35,7 @@ Fixed V1 defaults:
 - revision thinking time: 4 seconds
 - revision answer display time: 3 seconds
 - quiz answer time: 20 seconds
-- quiz result display time: 5 seconds
+- quiz result display time: 3 seconds
 
 These values can be reconsidered later if real usage shows a need.
 
@@ -123,6 +123,9 @@ Multiple-choice learning modes.
 JLPT level controls belong directly on each Quiz page. Quiz type is selected from the Quiz submenu in the global navigation.
 
 ### Kanji → meaning
+
+The meaning quiz also displays ON readings, KUN readings and their rōmaji transcription beside the central kanji.
+
 
 ```text
 食

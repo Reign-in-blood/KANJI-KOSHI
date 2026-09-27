@@ -4,7 +4,7 @@ import { createCountdownTimer } from '../../core/timer.js'
 import { loadKanji } from '../../data/loader.js'
 
 const QUESTION_DURATION_MS = 20000
-const REVIEW_DURATION_MS = 5000
+const REVIEW_DURATION_MS = 3000
 
 export function renderMultipleChoiceQuizPage(root, config) {
   const {
@@ -14,6 +14,7 @@ export function renderMultipleChoiceQuizPage(root, config) {
     getSubjectLabel,
     getAnswer,
     isDistractorAllowed,
+    getSubjectDetails = null,
     subjectClass = 'quiz-kanji',
     optionClass = '',
   } = config
@@ -56,7 +57,11 @@ export function renderMultipleChoiceQuizPage(root, config) {
           <strong data-role="score">Score 0 / 0</strong>
         </div>
 
-        <div class="quiz-subject ${subjectClass}" data-role="subject">準</div>
+        <div class="quiz-subject-layout" data-role="subject-layout">
+          <aside class="quiz-reading-panel" data-role="subject-details" hidden></aside>
+          <div class="quiz-subject ${subjectClass}" data-role="subject">準</div>
+          <div class="quiz-subject-balance" aria-hidden="true"></div>
+        </div>
 
         <p class="quiz-prompt">${prompt}</p>
 
@@ -78,6 +83,8 @@ export function renderMultipleChoiceQuizPage(root, config) {
   `
 
   const subjectElement = root.querySelector('[data-role="subject"]')
+  const subjectLayout = root.querySelector('[data-role="subject-layout"]')
+  const subjectDetails = root.querySelector('[data-role="subject-details"]')
   const level = root.querySelector('[data-role="level"]')
   const questionNumber = root.querySelector('[data-role="question"]')
   const scoreLabel = root.querySelector('[data-role="score"]')
@@ -156,6 +163,30 @@ export function renderMultipleChoiceQuizPage(root, config) {
     startReview('Temps écoulé. La bonne réponse est affichée en vert.')
   }
 
+  function renderSubjectDetails(subject) {
+    const details = typeof getSubjectDetails === 'function' ? getSubjectDetails(subject) : []
+
+    subjectDetails.replaceChildren()
+    subjectLayout.classList.toggle('has-details', Boolean(details?.length))
+    subjectDetails.hidden = !details?.length
+
+    for (const detail of details ?? []) {
+      const row = document.createElement('div')
+      row.className = 'quiz-reading-row'
+
+      const label = document.createElement('span')
+      label.className = 'quiz-reading-label'
+      label.textContent = detail.label
+
+      const value = document.createElement('strong')
+      value.className = 'quiz-reading-value'
+      value.textContent = detail.value || '—'
+
+      row.append(label, value)
+      subjectDetails.append(row)
+    }
+  }
+
   function renderChoices() {
     optionsRoot.replaceChildren()
 
@@ -185,6 +216,7 @@ export function renderMultipleChoiceQuizPage(root, config) {
 
     answered = false
     subjectElement.textContent = getSubjectLabel(subject)
+    renderSubjectDetails(subject)
     level.textContent = subject.jlpt
     questionNumber.textContent = `Question ${state.questionNumber}`
     feedback.textContent = 'Choisis une réponse avant la fin du temps.'
