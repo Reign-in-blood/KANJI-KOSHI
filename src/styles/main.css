@@ -958,6 +958,7 @@ button.mode-card:hover {
   font-size: clamp(8rem, 22vw, 13rem);
   font-weight: 600;
   line-height: 1;
+  transform: translateY(-12px);
 }
 
 .quiz-prompt {
