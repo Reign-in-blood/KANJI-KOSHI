@@ -33,7 +33,7 @@ export function renderHomePage(root, { navigate }) {
           <p class="eyebrow">Modes d'apprentissage</p>
           <h2 id="modes-title">Choisis comment travailler</h2>
         </div>
-        <p>La révision est disponible dès maintenant. Les autres modes arrivent progressivement.</p>
+        <p>Révision et quiz sont disponibles. Les autres modes arrivent progressivement.</p>
       </div>
 
       <div class="mode-grid">
@@ -47,14 +47,15 @@ export function renderHomePage(root, { navigate }) {
           <span class="mode-card-arrow" aria-hidden="true">→</span>
         </button>
 
-        <article class="mode-card is-coming-soon">
+        <button class="mode-card" type="button" data-action="start-quiz">
           <span class="mode-card-symbol" aria-hidden="true">問</span>
           <span class="mode-card-body">
-            <span class="mode-card-kicker">À venir</span>
+            <span class="mode-card-kicker">Disponible</span>
             <strong>Quiz</strong>
-            <span>Choix multiples sur les significations, lectures et kanji.</span>
+            <span>Quatre propositions pour retrouver la signification d'un kanji.</span>
           </span>
-        </article>
+          <span class="mode-card-arrow" aria-hidden="true">→</span>
+        </button>
 
         <article class="mode-card is-coming-soon">
           <span class="mode-card-symbol" aria-hidden="true">あ</span>
@@ -91,6 +92,8 @@ export function renderHomePage(root, { navigate }) {
   root.querySelectorAll('[data-action="start-revision"]').forEach(button => {
     button.addEventListener('click', () => navigate('revision'))
   })
+
+  root.querySelector('[data-action="start-quiz"]')?.addEventListener('click', () => navigate('quiz'))
 
   return () => {}
 }

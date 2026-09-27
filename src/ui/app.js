@@ -1,7 +1,8 @@
 import { renderHomePage } from './pages/home.js'
+import { renderQuizPage } from './pages/quiz.js'
 import { renderRevisionPage } from './pages/revision.js'
 
-const ROUTES = new Set(['home', 'revision'])
+const ROUTES = new Set(['home', 'revision', 'quiz'])
 
 function getRoute() {
   const value = window.location.hash.replace(/^#\/?/, '')
@@ -38,7 +39,7 @@ export function renderApp(root) {
         <nav class="main-nav" aria-label="Navigation principale">
           <button type="button" data-route="home">Accueil</button>
           <button type="button" data-route="revision">Révision</button>
-          <button type="button" disabled>Quiz</button>
+          <button type="button" data-route="quiz">Quiz</button>
           <button type="button" disabled>Kana</button>
           <button type="button" disabled>Progression</button>
         </nav>
@@ -72,6 +73,11 @@ export function renderApp(root) {
 
     if (route === 'revision') {
       cleanupPage = renderRevisionPage(pageRoot)
+      return
+    }
+
+    if (route === 'quiz') {
+      cleanupPage = renderQuizPage(pageRoot)
       return
     }
 

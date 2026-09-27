@@ -32,8 +32,10 @@ Examples:
 
 Fixed V1 defaults:
 
-- thinking time: 4 seconds
-- answer display time: 3 seconds
+- revision thinking time: 4 seconds
+- revision answer display time: 3 seconds
+- quiz answer time: 20 seconds
+- quiz result display time: 5 seconds
 
 These values can be reconsidered later if real usage shows a need.
 
@@ -342,19 +344,19 @@ There is deliberately no configuration screen and no Settings page.
 
 ## Phase 3 — Multiple-choice quiz
 
-- [ ] Create Quiz page
-- [ ] Put level/type controls directly on the page
-- [ ] Add Kanji → meaning quiz
+- [x] Create Quiz page
+- [x] Put level controls directly on the page
+- [x] Add Kanji → meaning quiz
 - [ ] Add Meaning → kanji quiz
 - [ ] Add Kanji → reading quiz
-- [ ] Generate plausible distractors
+- [x] Generate four unique distractor choices
 - [ ] Handle multiple valid readings safely
-- [ ] Track answers during a session
-- [ ] Show current score
+- [x] Track answers during a session
+- [x] Show current score
 - [ ] Create session result screen
 - [ ] Show mistakes
 - [ ] Add retry-mistakes action
-- [ ] Add automated tests for quiz generation
+- [x] Add automated tests for quiz generation
 
 ---
 
