@@ -1,10 +1,15 @@
 {
   "schemaVersion": 1,
+  "activeLevels": [
+    "N5",
+    "N4"
+  ],
   "source": {
     "dataset": "OpenJLPT",
     "repository": "evanclan/OpenJLPT",
     "revision": "c42fd9fa3777bfc1775446f7c418d549dfd6e4cf",
     "license": "CC BY-SA 4.0",
+    "scope": "KANJI KŌSHI V1: N5 and N4 only",
     "jlptLevelAssignments": "Jonathan Waller / Tanos community lists (unofficial)",
     "kanjiDetails": "KANJIDIC2 / EDRDG",
     "frenchMeanings": {
@@ -13,8 +18,7 @@
       "revision": "04014e06019fc9d4af76e6dbb64ec709fe863c4d",
       "license": "CC BY-SA 4.0",
       "coverage": 245
-    },
-    "scope": "KANJI KŌSHI V1: N5 and N4 only"
+    }
   },
   "counts": {
     "N5": 79,
@@ -8322,9 +8326,5 @@
         "frenchMeaningsRevision": "04014e06019fc9d4af76e6dbb64ec709fe863c4d"
       }
     }
-  ],
-  "activeLevels": [
-    "N5",
-    "N4"
   ]
 }

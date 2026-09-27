@@ -536,7 +536,7 @@ button.mode-card:hover {
 }
 
 .page-heading h1 {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-size: clamp(2.2rem, 3vw, 3.4rem);
 }
 
 .page-heading > p {
@@ -906,7 +906,7 @@ button.mode-card:hover {
 .quiz-page {
   width: min(100%, 920px);
   margin: 0 auto;
-  padding: 54px 0 72px;
+  padding: 20px 0 72px;
 }
 
 .quiz-toolbar {

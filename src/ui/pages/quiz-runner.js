@@ -33,7 +33,6 @@ export function renderMultipleChoiceQuizPage(root, config) {
           <p class="eyebrow">${eyebrow}</p>
           <h1>${title}</h1>
         </div>
-        <p>20 secondes pour répondre · résultat affiché 5 secondes</p>
       </header>
 
       <div class="revision-toolbar quiz-toolbar">
