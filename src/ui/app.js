@@ -1,8 +1,9 @@
 import { renderHomePage } from './pages/home.js'
 import { renderQuizPage } from './pages/quiz.js'
+import { renderSymbolQuizPage } from './pages/quiz-symbol.js'
 import { renderRevisionPage } from './pages/revision.js'
 
-const ROUTES = new Set(['home', 'revision', 'quiz'])
+const ROUTES = new Set(['home', 'revision', 'quiz', 'quiz-symbol'])
 
 function getRoute() {
   const value = window.location.hash.replace(/^#\/?/, '')
@@ -39,7 +40,22 @@ export function renderApp(root) {
         <nav class="main-nav" aria-label="Navigation principale">
           <button type="button" data-route="home">Accueil</button>
           <button type="button" data-route="revision">Révision</button>
-          <button type="button" data-route="quiz">Quiz</button>
+
+          <div class="nav-dropdown">
+            <button
+              class="nav-dropdown-trigger"
+              type="button"
+              data-route="quiz"
+              data-route-group="quiz"
+            >
+              Quiz <span class="nav-dropdown-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div class="nav-submenu">
+              <button type="button" data-route="quiz">Signification</button>
+              <button type="button" data-route="quiz-symbol">Symbole</button>
+            </div>
+          </div>
+
           <button type="button" disabled>Kana</button>
           <button type="button" disabled>Progression</button>
         </nav>
@@ -63,16 +79,24 @@ export function renderApp(root) {
     const route = getRoute()
 
     routeButtons.forEach(button => {
-      const active = button.dataset.route === route
+      const routeGroup = button.dataset.routeGroup
+      const active = button.dataset.route === route || (routeGroup && route.startsWith(routeGroup))
+
       button.classList.toggle('is-active', active)
+
       if (button.closest('.main-nav')) {
-        if (active) button.setAttribute('aria-current', 'page')
+        if (active && !routeGroup) button.setAttribute('aria-current', 'page')
         else button.removeAttribute('aria-current')
       }
     })
 
     if (route === 'revision') {
       cleanupPage = renderRevisionPage(pageRoot)
+      return
+    }
+
+    if (route === 'quiz-symbol') {
+      cleanupPage = renderSymbolQuizPage(pageRoot)
       return
     }
 

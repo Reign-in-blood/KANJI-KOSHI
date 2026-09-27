@@ -120,7 +120,7 @@ Displayed information after reveal:
 
 Multiple-choice learning modes.
 
-Controls belong directly on the Quiz page.
+JLPT level controls belong directly on each Quiz page. Quiz type is selected from the Quiz submenu in the global navigation.
 
 ### Kanji → meaning
 
@@ -160,7 +160,7 @@ Quelle lecture est valide pour 食 ?
 Quiz requirements:
 
 - direct N5 / N4 level controls
-- direct quiz-type controls
+- Quiz submenu: Signification / Symbole
 - plausible distractors
 - support for multiple valid readings
 - score tracking
@@ -344,10 +344,11 @@ There is deliberately no configuration screen and no Settings page.
 
 ## Phase 3 — Multiple-choice quiz
 
-- [x] Create Quiz page
-- [x] Put level controls directly on the page
+- [x] Create Quiz pages
+- [x] Add Quiz submenu: Signification / Symbole
+- [x] Put level controls directly on each page
 - [x] Add Kanji → meaning quiz
-- [ ] Add Meaning → kanji quiz
+- [x] Add Meaning → kanji quiz
 - [ ] Add Kanji → reading quiz
 - [x] Generate four unique distractor choices
 - [ ] Handle multiple valid readings safely
@@ -469,11 +470,11 @@ To avoid scope creep, do not prioritize these yet:
 Current branch:
 
 ```text
-feature/ui-v1
+feature/quiz-page
 ```
 
 Immediate objective:
 
-> Build the Home page and global application shell, then integrate the already working Revision mode into that interface.
+> Expand the reusable multiple-choice quiz foundation with Signification and Symbole modes before adding reading-based quiz variants.
 
 The UI should follow `docs/DESIGN-SYSTEM.md` and keep controls close to the activity they affect.
