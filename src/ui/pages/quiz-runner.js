@@ -132,6 +132,7 @@ export function renderMultipleChoiceQuizPage(root, config) {
     answered = true
     questionTimer.pause()
     markAnswers(selectedKey)
+    showSubjectDetails()
     feedback.textContent = message
     feedback.classList.toggle('is-success', selectedKey === currentQuestion.correctKey)
     feedback.classList.toggle('is-error', Boolean(selectedKey) && selectedKey !== currentQuestion.correctKey)
@@ -168,7 +169,7 @@ export function renderMultipleChoiceQuizPage(root, config) {
 
     subjectDetails.replaceChildren()
     subjectLayout.classList.toggle('has-details', Boolean(details?.length))
-    subjectDetails.hidden = !details?.length
+    subjectDetails.hidden = true
 
     for (const detail of details ?? []) {
       const row = document.createElement('div')
@@ -184,6 +185,12 @@ export function renderMultipleChoiceQuizPage(root, config) {
 
       row.append(label, value)
       subjectDetails.append(row)
+    }
+  }
+
+  function showSubjectDetails() {
+    if (subjectLayout.classList.contains('has-details')) {
+      subjectDetails.hidden = false
     }
   }
 

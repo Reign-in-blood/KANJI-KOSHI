@@ -124,7 +124,7 @@ JLPT level controls belong directly on each Quiz page. Quiz type is selected fro
 
 ### Kanji → meaning
 
-The meaning quiz also displays ON readings, KUN readings and their rōmaji transcription beside the central kanji.
+The meaning quiz reveals ON readings, KUN readings and their rōmaji transcription beside the central kanji only after the learner answers or the timer expires.
 
 
 ```text
