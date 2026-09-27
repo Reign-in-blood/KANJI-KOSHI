@@ -1010,10 +1010,14 @@ button.mode-card:hover {
 
 .quiz-feedback {
   min-height: 24px;
-  margin: 0;
+  margin: 0 0 10px;
   color: var(--color-text-muted);
   text-align: center;
   font-weight: 600;
+}
+
+.quiz-feedback[hidden] {
+  display: none;
 }
 
 .quiz-feedback.is-success {
@@ -1025,7 +1029,10 @@ button.mode-card:hover {
 }
 
 .quiz-timer {
-  margin-top: 18px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  justify-self: stretch;
 }
 
 .quiz-timer-meta {

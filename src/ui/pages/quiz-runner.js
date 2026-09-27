@@ -67,18 +67,17 @@ export function renderMultipleChoiceQuizPage(root, config) {
 
         <div class="quiz-options" data-role="options"></div>
 
-        <p class="quiz-feedback" data-role="feedback">Chargement du quiz…</p>
+        <div class="quiz-timer">
+          <p class="quiz-feedback" data-role="feedback" hidden></p>
+          <div class="progress-track" aria-label="Temps restant">
+            <div class="progress-value" data-role="progress"></div>
+          </div>
+          <div class="quiz-timer-meta">
+            <span data-role="timer-label">Temps restant</span>
+            <strong data-role="timer-seconds">20 s</strong>
+          </div>
+        </div>
       </section>
-
-      <div class="quiz-timer">
-        <div class="progress-track" aria-label="Temps restant">
-          <div class="progress-value" data-role="progress"></div>
-        </div>
-        <div class="quiz-timer-meta">
-          <span data-role="timer-label">Temps restant</span>
-          <strong data-role="timer-seconds">20 s</strong>
-        </div>
-      </div>
     </section>
   `
 
@@ -133,6 +132,7 @@ export function renderMultipleChoiceQuizPage(root, config) {
     questionTimer.pause()
     markAnswers(selectedKey)
     showSubjectDetails()
+    feedback.hidden = false
     feedback.textContent = message
     feedback.classList.toggle('is-success', selectedKey === currentQuestion.correctKey)
     feedback.classList.toggle('is-error', Boolean(selectedKey) && selectedKey !== currentQuestion.correctKey)
@@ -226,7 +226,8 @@ export function renderMultipleChoiceQuizPage(root, config) {
     renderSubjectDetails(subject)
     level.textContent = subject.jlpt
     questionNumber.textContent = `Question ${state.questionNumber}`
-    feedback.textContent = 'Choisis une réponse avant la fin du temps.'
+    feedback.hidden = true
+    feedback.textContent = ''
     feedback.classList.remove('is-success', 'is-error')
     renderChoices()
 
@@ -273,6 +274,7 @@ export function renderMultipleChoiceQuizPage(root, config) {
       if (disposed) return
 
       console.error(error)
+      feedback.hidden = false
       feedback.textContent = 'Erreur de chargement des données.'
     })
 
