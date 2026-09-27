@@ -55,10 +55,17 @@ body {
   min-width: 320px;
   min-height: 100vh;
   color: var(--color-text);
-  background:
-    radial-gradient(circle at 8% 14%, rgb(249 216 219 / 64%) 0 0, transparent 25%),
-    radial-gradient(circle at 92% 22%, rgb(240 119 175 / 10%) 0 0, transparent 20%),
-    linear-gradient(180deg, #fffafa 0%, var(--color-bg) 42%, #fffefe 100%);
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(
+      rgb(255 249 248 / 28%),
+      rgb(255 249 248 / 28%)
+    ),
+    url("../assets/background/sakura-background.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: var(--font-ui);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
