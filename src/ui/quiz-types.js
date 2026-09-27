@@ -18,6 +18,11 @@ export function getQuizTargets(source) {
   return QUIZ_TYPE_ORDER.filter(type => type !== source)
 }
 
+export function getQuizDetailTypes(source, target) {
+  if (!QUIZ_TYPES[source] || !QUIZ_TYPES[target] || source === target) return []
+  return QUIZ_TYPE_ORDER.filter(type => type !== source && type !== target)
+}
+
 export function createQuizRoute(source, target) {
   if (!QUIZ_TYPES[source] || !QUIZ_TYPES[target] || source === target) {
     throw new Error(`Invalid quiz mode: ${source} → ${target}`)

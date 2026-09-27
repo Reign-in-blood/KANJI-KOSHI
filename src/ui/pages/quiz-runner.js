@@ -170,6 +170,10 @@ export function renderMultipleChoiceQuizPage(root, config) {
       const row = document.createElement('div')
       row.className = 'quiz-reading-row'
 
+      if (detail.type) {
+        row.dataset.detailType = detail.type
+      }
+
       const label = document.createElement('span')
       label.className = 'quiz-reading-label'
       label.textContent = detail.label

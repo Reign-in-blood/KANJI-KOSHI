@@ -2,6 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import {
   createQuizRoute,
+  getQuizDetailTypes,
   getQuizTargets,
   normalizeQuizRoute,
   parseQuizRoute,
@@ -35,4 +36,22 @@ test('legacy quiz routes normalize to the new source-target routes', () => {
 test('same-source-and-target routes are rejected', () => {
   assert.equal(parseQuizRoute('quiz-kanji-kanji'), null)
   assert.throws(() => createQuizRoute('kanji', 'kanji'))
+})
+
+
+test('correction panel contains exactly the three unused representations', () => {
+  assert.deepEqual(
+    getQuizDetailTypes('kanji', 'meaning'),
+    ['romaji', 'kun', 'on'],
+  )
+
+  assert.deepEqual(
+    getQuizDetailTypes('romaji', 'meaning'),
+    ['kanji', 'kun', 'on'],
+  )
+
+  assert.deepEqual(
+    getQuizDetailTypes('kun', 'kanji'),
+    ['romaji', 'meaning', 'on'],
+  )
 })

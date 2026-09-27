@@ -1,6 +1,6 @@
 import { kanaToRomaji } from '../../core/romaji.js'
 import { getKanjiMeanings } from '../../data/loader.js'
-import { QUIZ_TYPES } from '../quiz-types.js'
+import { getQuizDetailTypes, QUIZ_TYPES } from '../quiz-types.js'
 import { renderMultipleChoiceQuizPage } from './quiz-runner.js'
 import { getMeaningLabel } from './quiz-helpers.js'
 
@@ -44,21 +44,24 @@ function valuesOverlap(candidate, subject, type) {
   )
 }
 
-function formatReadings(readings = []) {
-  return readings.length ? readings.join(' · ') : '—'
-}
+function getDetailValue(item, type) {
+  if (type === 'kanji') return item.character || '—'
 
-function formatRomaji(item) {
-  const values = getTypeValues(item, 'romaji')
+  if (type === 'meaning') {
+    const meanings = getKanjiMeanings(item, 'fr').filter(Boolean)
+    return meanings.length ? meanings.slice(0, 3).join(' · ') : '—'
+  }
+
+  const values = getTypeValues(item, type)
   return values.length ? values.join(' · ') : '—'
 }
 
-function getReadingDetails(item) {
-  return [
-    { label: 'ON', value: formatReadings(item.onReadings) },
-    { label: 'KUN', value: formatReadings(item.kunReadings) },
-    { label: 'Rōmaji', value: formatRomaji(item) },
-  ]
+function getCorrectionDetails(item, source, target) {
+  return getQuizDetailTypes(source, target).map(type => ({
+    type,
+    label: QUIZ_TYPES[type].label,
+    value: getDetailValue(item, type),
+  }))
 }
 
 function getSubjectClass(type) {
@@ -98,7 +101,7 @@ export function renderQuizPage(root, mode = { source: 'kanji', target: 'meaning'
     subjectClass: getSubjectClass(source),
     optionClass: getOptionClass(target),
     getSubjectLabel: item => getTypeLabel(item, source),
-    getSubjectDetails: getReadingDetails,
+    getSubjectDetails: item => getCorrectionDetails(item, source, target),
     getAnswer: item => ({
       key: item.id,
       label: getTypeLabel(item, target),
