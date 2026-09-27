@@ -1,5 +1,5 @@
-const PETAL_COUNT_DESKTOP = 24
-const PETAL_COUNT_MOBILE = 14
+const PETAL_COUNT_DESKTOP = 20
+const PETAL_COUNT_MOBILE = 12
 
 function randomBetween(min, max) {
   return min + Math.random() * (max - min)
@@ -8,12 +8,12 @@ function randomBetween(min, max) {
 function configurePetal(petal, index) {
   const size = randomBetween(8, 17)
   const startX = randomBetween(-4, 100)
-  const drift = randomBetween(-18, 18)
-  const duration = randomBetween(8, 16)
+  const drift = randomBetween(-12, 12)
+  const duration = randomBetween(14, 24)
   const delay = -randomBetween(0, duration)
-  const spin = randomBetween(300, 900) * (Math.random() > 0.5 ? 1 : -1)
+  const spin = randomBetween(80, 220) * (Math.random() > 0.5 ? 1 : -1)
   const opacity = randomBetween(0.42, 0.78)
-  const sway = randomBetween(18, 46)
+  const sway = randomBetween(12, 30)
 
   petal.style.setProperty('--petal-size', `${size}px`)
   petal.style.setProperty('--petal-x', `${startX}vw`)
@@ -42,11 +42,6 @@ export function mountSakuraFall() {
     const petal = document.createElement('span')
     petal.className = 'sakura-petal'
     configurePetal(petal, index)
-
-    petal.addEventListener('animationiteration', () => {
-      configurePetal(petal, index)
-    })
-
     layer.append(petal)
   }
 

@@ -1297,7 +1297,7 @@ button.mode-card:hover {
   position: absolute;
   top: -12vh;
   left: 0;
-  opacity: var(--petal-opacity);
+  opacity: 0;
   border-radius: 75% 12% 72% 28%;
   background:
     radial-gradient(circle at 68% 28%, rgb(255 255 255 / 72%) 0 12%, transparent 13%),
@@ -1307,7 +1307,7 @@ button.mode-card:hover {
   animation:
     sakura-fall var(--petal-duration) linear var(--petal-delay) infinite,
     sakura-sway 2.8s ease-in-out var(--petal-phase) infinite alternate;
-  will-change: transform;
+  will-change: transform, opacity;
 }
 
 .sakura-petal::after {
@@ -1324,32 +1324,40 @@ button.mode-card:hover {
 
 @keyframes sakura-fall {
   0% {
+    opacity: 0;
     transform:
-      translate3d(var(--petal-x), -12vh, 0)
-      rotate(0deg)
-      rotateY(0deg);
+      translate3d(var(--petal-x), -14vh, 0)
+      rotate(0deg);
+  }
+
+  7% {
+    opacity: var(--petal-opacity);
   }
 
   50% {
+    opacity: var(--petal-opacity);
     transform:
       translate3d(
-        calc(var(--petal-x) + (var(--petal-drift) * 0.55)),
+        calc(var(--petal-x) + (var(--petal-drift) * 0.5)),
         50vh,
         0
       )
-      rotate(calc(var(--petal-spin) * 0.52))
-      rotateY(150deg);
+      rotate(calc(var(--petal-spin) * 0.5));
+  }
+
+  92% {
+    opacity: var(--petal-opacity);
   }
 
   100% {
+    opacity: 0;
     transform:
       translate3d(
         calc(var(--petal-x) + var(--petal-drift)),
-        112vh,
+        114vh,
         0
       )
-      rotate(var(--petal-spin))
-      rotateY(320deg);
+      rotate(var(--petal-spin));
   }
 }
 
