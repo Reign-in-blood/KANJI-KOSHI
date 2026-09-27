@@ -54,7 +54,6 @@ export function renderMultipleChoiceQuizPage(root, config) {
       <section class="quiz-stage" aria-live="polite">
         <div class="quiz-statusbar">
           <span class="level-badge" data-role="level">N5</span>
-          <span data-role="question">Question 0</span>
           <strong data-role="score">Score 0 / 0</strong>
         </div>
 
@@ -85,7 +84,6 @@ export function renderMultipleChoiceQuizPage(root, config) {
   const subjectLayout = root.querySelector('[data-role="subject-layout"]')
   const subjectDetails = root.querySelector('[data-role="subject-details"]')
   const level = root.querySelector('[data-role="level"]')
-  const questionNumber = root.querySelector('[data-role="question"]')
   const scoreLabel = root.querySelector('[data-role="score"]')
   const optionsRoot = root.querySelector('[data-role="options"]')
   const progress = root.querySelector('[data-role="progress"]')
@@ -224,7 +222,6 @@ export function renderMultipleChoiceQuizPage(root, config) {
     subjectElement.textContent = getSubjectLabel(subject)
     renderSubjectDetails(subject)
     level.textContent = subject.jlpt
-    questionNumber.textContent = `Question ${state.questionNumber}`
     renderChoices()
 
     reviewTimer.stop()

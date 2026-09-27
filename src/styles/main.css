@@ -644,7 +644,11 @@ button.mode-card:hover {
 }
 
 .level-badge {
-  padding: 5px 10px;
+  min-width: 36px;
+  width: fit-content;
+  display: inline-grid;
+  place-items: center;
+  padding: 5px 8px;
   border-radius: 999px;
   color: var(--color-primary);
   background: var(--color-sakura);
@@ -933,16 +937,15 @@ button.mode-card:hover {
 }
 
 .quiz-statusbar {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
   color: var(--color-text-muted);
   font-size: 0.82rem;
 }
 
 .quiz-statusbar > :last-child {
-  justify-self: end;
   color: var(--color-primary);
 }
 
@@ -1031,19 +1034,6 @@ button.mode-card:hover {
 @media (max-width: 620px) {
   .quiz-page {
     padding-top: 36px;
-  }
-
-  .quiz-statusbar {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .quiz-statusbar > :nth-child(2) {
-    justify-self: end;
-  }
-
-  .quiz-statusbar > :last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
   }
 
   .quiz-kanji {
