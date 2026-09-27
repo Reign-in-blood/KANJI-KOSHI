@@ -1008,26 +1008,6 @@ button.mode-card:hover {
   color: #792d36;
 }
 
-.quiz-feedback {
-  min-height: 24px;
-  margin: 0 0 10px;
-  color: var(--color-text-muted);
-  text-align: center;
-  font-weight: 600;
-}
-
-.quiz-feedback[hidden] {
-  display: none;
-}
-
-.quiz-feedback.is-success {
-  color: var(--color-success);
-}
-
-.quiz-feedback.is-error {
-  color: var(--color-error);
-}
-
 .quiz-timer {
   width: 100%;
   max-width: 100%;

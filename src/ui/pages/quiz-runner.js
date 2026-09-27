@@ -68,7 +68,6 @@ export function renderMultipleChoiceQuizPage(root, config) {
         <div class="quiz-options" data-role="options"></div>
 
         <div class="quiz-timer">
-          <p class="quiz-feedback" data-role="feedback" hidden></p>
           <div class="progress-track" aria-label="Temps restant">
             <div class="progress-value" data-role="progress"></div>
           </div>
@@ -88,7 +87,6 @@ export function renderMultipleChoiceQuizPage(root, config) {
   const questionNumber = root.querySelector('[data-role="question"]')
   const scoreLabel = root.querySelector('[data-role="score"]')
   const optionsRoot = root.querySelector('[data-role="options"]')
-  const feedback = root.querySelector('[data-role="feedback"]')
   const progress = root.querySelector('[data-role="progress"]')
   const timerLabel = root.querySelector('[data-role="timer-label"]')
   const timerSeconds = root.querySelector('[data-role="timer-seconds"]')
@@ -127,15 +125,11 @@ export function renderMultipleChoiceQuizPage(root, config) {
     })
   }
 
-  function startReview(message, selectedKey = null) {
+  function startReview(selectedKey = null) {
     answered = true
     questionTimer.pause()
     markAnswers(selectedKey)
     showSubjectDetails()
-    feedback.hidden = false
-    feedback.textContent = message
-    feedback.classList.toggle('is-success', selectedKey === currentQuestion.correctKey)
-    feedback.classList.toggle('is-error', Boolean(selectedKey) && selectedKey !== currentQuestion.correctKey)
     reviewTimer.start(REVIEW_DURATION_MS)
   }
 
@@ -148,12 +142,12 @@ export function renderMultipleChoiceQuizPage(root, config) {
     if (result.isCorrect) {
       score += 1
       updateScore()
-      startReview('Bonne réponse.', choiceKey)
+      startReview(choiceKey)
       return
     }
 
     updateScore()
-    startReview('Mauvaise réponse. La bonne réponse est affichée en vert.', choiceKey)
+    startReview(choiceKey)
   }
 
   function handleTimeout() {
@@ -161,7 +155,7 @@ export function renderMultipleChoiceQuizPage(root, config) {
 
     attempts += 1
     updateScore()
-    startReview('Temps écoulé. La bonne réponse est affichée en vert.')
+    startReview()
   }
 
   function renderSubjectDetails(subject) {
@@ -226,9 +220,6 @@ export function renderMultipleChoiceQuizPage(root, config) {
     renderSubjectDetails(subject)
     level.textContent = subject.jlpt
     questionNumber.textContent = `Question ${state.questionNumber}`
-    feedback.hidden = true
-    feedback.textContent = ''
-    feedback.classList.remove('is-success', 'is-error')
     renderChoices()
 
     reviewTimer.stop()
@@ -274,8 +265,8 @@ export function renderMultipleChoiceQuizPage(root, config) {
       if (disposed) return
 
       console.error(error)
-      feedback.hidden = false
-      feedback.textContent = 'Erreur de chargement des données.'
+      timerLabel.textContent = 'Erreur de chargement des données'
+      timerSeconds.textContent = '—'
     })
 
   levelInputs.forEach(input => {
