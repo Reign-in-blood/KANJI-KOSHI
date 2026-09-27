@@ -14,6 +14,7 @@ export function renderMultipleChoiceQuizPage(root, config) {
     getSubjectLabel,
     getAnswer,
     isDistractorAllowed,
+    isItemEligible = () => true,
     getSubjectDetails = null,
     subjectClass = 'quiz-kanji',
     optionClass = '',
@@ -256,7 +257,12 @@ export function renderMultipleChoiceQuizPage(root, config) {
     .then(loadedItems => {
       if (disposed) return
 
-      items = loadedItems
+      items = loadedItems.filter(isItemEligible)
+
+      if (items.length < 4) {
+        throw new Error('Not enough eligible kanji for this quiz mode')
+      }
+
       session = createQuizSession(items, { levels: selectedLevels() })
       updateScore()
       nextQuestion()

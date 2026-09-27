@@ -1073,78 +1073,108 @@ button.mode-card:hover {
   transition: transform var(--transition-fast);
 }
 
+.nav-dropdown.is-open .nav-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-submenu[hidden] {
+  display: none;
+}
+
 .nav-submenu {
-  min-width: 178px;
+  width: 210px;
   display: grid;
   gap: 4px;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 6px);
   right: 0;
   padding: 8px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: rgb(255 255 255 / 97%);
+  background: rgb(255 255 255 / 98%);
   box-shadow: var(--shadow-card);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(-4px);
-  transition:
-    opacity var(--transition-fast),
-    transform var(--transition-fast),
-    visibility var(--transition-fast);
   z-index: 30;
 }
 
-.nav-dropdown:hover .nav-submenu,
-.nav-dropdown:focus-within .nav-submenu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
+.quiz-menu-heading {
+  padding: 5px 10px 7px;
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 
-.nav-dropdown:hover .nav-dropdown-arrow,
-.nav-dropdown:focus-within .nav-dropdown-arrow {
-  transform: rotate(180deg);
-}
-
-/* After choosing a quiz, keep the menu closed until the pointer leaves
-   the Quiz area. This avoids the submenu remaining open because of :hover
-   or :focus-within on the clicked button. */
-.nav-dropdown.is-forced-closed .nav-submenu {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(-4px);
-}
-
-.nav-dropdown.is-forced-closed .nav-dropdown-arrow {
-  transform: rotate(0);
-}
-
-.main-nav .nav-submenu button {
+.main-nav .quiz-menu-item,
+.main-nav .quiz-menu-back {
   width: 100%;
   min-height: 40px;
-  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 12px;
   border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  background: transparent;
   text-align: left;
 }
 
-.main-nav .nav-submenu button.is-active {
+.main-nav .quiz-menu-item:hover,
+.main-nav .quiz-menu-back:hover,
+.main-nav .quiz-menu-item.is-current {
+  color: var(--color-primary);
+  background: var(--color-surface-soft);
+}
+
+.main-nav .quiz-menu-item.is-active {
   color: var(--color-text-on-primary);
   background: var(--color-primary);
 }
 
-.main-nav .nav-submenu button:not(.is-active) {
-  color: var(--color-text-muted);
-  background: transparent;
+.quiz-menu-chevron {
+  margin-left: 16px;
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
-.main-nav .nav-submenu button:not(.is-active):hover {
+.quiz-menu-back {
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 3px;
   color: var(--color-primary);
-  background: var(--color-surface-soft);
+  font-weight: 700;
+}
+
+/* Generic quiz representations */
+
+.quiz-reading-subject {
+  min-height: 230px;
+  display: grid;
+  place-items: center;
+  padding: 28px 18px;
+  color: var(--color-primary);
+  font-family: var(--font-kanji);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.quiz-romaji-subject {
+  font-family: var(--font-ui);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: 0.02em;
+}
+
+.quiz-option-reading {
+  min-height: 92px;
+  font-family: var(--font-kanji);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.quiz-option-romaji {
+  min-height: 88px;
+  font-size: clamp(1.1rem, 2.5vw, 1.55rem);
 }
 
 /* Inverse quiz: meaning -> symbol */
@@ -1179,6 +1209,10 @@ button.mode-card:hover {
   .nav-submenu {
     left: 0;
     right: auto;
+  }
+
+  .quiz-reading-subject {
+    min-height: 190px;
   }
 }
 
