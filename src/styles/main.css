@@ -162,7 +162,8 @@ input:focus-visible + span {
 }
 
 .main-nav button:hover:not(:disabled),
-.main-nav button.is-active {
+.main-nav button.is-active,
+.main-nav button.is-group-active {
   color: var(--color-primary);
   background: var(--color-surface-soft);
 }
@@ -1114,6 +1115,20 @@ button.mode-card:hover {
   transform: rotate(180deg);
 }
 
+/* After choosing a quiz, keep the menu closed until the pointer leaves
+   the Quiz area. This avoids the submenu remaining open because of :hover
+   or :focus-within on the clicked button. */
+.nav-dropdown.is-forced-closed .nav-submenu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-4px);
+}
+
+.nav-dropdown.is-forced-closed .nav-dropdown-arrow {
+  transform: rotate(0);
+}
+
 .main-nav .nav-submenu button {
   width: 100%;
   min-height: 40px;
@@ -1126,6 +1141,16 @@ button.mode-card:hover {
 .main-nav .nav-submenu button.is-active {
   color: var(--color-text-on-primary);
   background: var(--color-primary);
+}
+
+.main-nav .nav-submenu button:not(.is-active) {
+  color: var(--color-text-muted);
+  background: transparent;
+}
+
+.main-nav .nav-submenu button:not(.is-active):hover {
+  color: var(--color-primary);
+  background: var(--color-surface-soft);
 }
 
 /* Inverse quiz: meaning -> symbol */

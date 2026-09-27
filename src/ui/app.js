@@ -72,6 +72,18 @@ export function renderApp(root) {
 
   const pageRoot = root.querySelector('[data-role="page"]')
   const routeButtons = [...root.querySelectorAll('[data-route]')]
+  const quizDropdown = root.querySelector('.nav-dropdown')
+  const quizDropdownTrigger = root.querySelector('.nav-dropdown-trigger')
+  const quizSubmenuButtons = [...root.querySelectorAll('.nav-submenu [data-route]')]
+
+  function closeQuizDropdown() {
+    quizDropdown?.classList.add('is-forced-closed')
+    quizSubmenuButtons.forEach(button => button.blur())
+  }
+
+  function reopenQuizDropdownOnNextVisit() {
+    quizDropdown?.classList.remove('is-forced-closed')
+  }
 
   function renderRoute() {
     cleanupPage()
@@ -80,12 +92,14 @@ export function renderApp(root) {
 
     routeButtons.forEach(button => {
       const routeGroup = button.dataset.routeGroup
-      const active = button.dataset.route === route || (routeGroup && route.startsWith(routeGroup))
+      const exactActive = !routeGroup && button.dataset.route === route
+      const groupActive = Boolean(routeGroup && route.startsWith(routeGroup))
 
-      button.classList.toggle('is-active', active)
+      button.classList.toggle('is-active', exactActive)
+      button.classList.toggle('is-group-active', groupActive)
 
       if (button.closest('.main-nav')) {
-        if (active && !routeGroup) button.setAttribute('aria-current', 'page')
+        if (exactActive) button.setAttribute('aria-current', 'page')
         else button.removeAttribute('aria-current')
       }
     })
@@ -109,8 +123,14 @@ export function renderApp(root) {
   }
 
   routeButtons.forEach(button => {
-    button.addEventListener('click', () => setRoute(button.dataset.route))
+    button.addEventListener('click', () => {
+      if (button.closest('.nav-submenu')) closeQuizDropdown()
+      setRoute(button.dataset.route)
+    })
   })
+
+  quizDropdown?.addEventListener('pointerleave', reopenQuizDropdownOnNextVisit)
+  quizDropdownTrigger?.addEventListener('focus', reopenQuizDropdownOnNextVisit)
 
   window.addEventListener('hashchange', renderRoute)
   renderRoute()
