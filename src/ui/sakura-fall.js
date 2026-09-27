@@ -1,5 +1,5 @@
-const PETAL_COUNT_DESKTOP = 20
-const PETAL_COUNT_MOBILE = 12
+const PETAL_COUNT_DESKTOP = 14
+const PETAL_COUNT_MOBILE = 8
 
 function randomBetween(min, max) {
   return min + Math.random() * (max - min)

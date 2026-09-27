@@ -1326,11 +1326,11 @@ button.mode-card:hover {
   0% {
     opacity: 0;
     transform:
-      translate3d(var(--petal-x), -14vh, 0)
+      translate3d(var(--petal-x), -16vh, 0)
       rotate(0deg);
   }
 
-  7% {
+  6% {
     opacity: var(--petal-opacity);
   }
 
@@ -1339,22 +1339,18 @@ button.mode-card:hover {
     transform:
       translate3d(
         calc(var(--petal-x) + (var(--petal-drift) * 0.5)),
-        50vh,
+        52vh,
         0
       )
       rotate(calc(var(--petal-spin) * 0.5));
   }
 
-  92% {
-    opacity: var(--petal-opacity);
-  }
-
   100% {
-    opacity: 0;
+    opacity: var(--petal-opacity);
     transform:
       translate3d(
         calc(var(--petal-x) + var(--petal-drift)),
-        114vh,
+        125vh,
         0
       )
       rotate(var(--petal-spin));
