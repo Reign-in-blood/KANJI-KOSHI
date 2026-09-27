@@ -1279,3 +1279,98 @@ button.mode-card:hover {
     display: none;
   }
 }
+
+
+/* Falling sakura petals */
+
+.sakura-fall {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.sakura-petal {
+  width: var(--petal-size);
+  height: calc(var(--petal-size) * 0.78);
+  position: absolute;
+  top: -12vh;
+  left: 0;
+  opacity: var(--petal-opacity);
+  border-radius: 75% 12% 72% 28%;
+  background:
+    radial-gradient(circle at 68% 28%, rgb(255 255 255 / 72%) 0 12%, transparent 13%),
+    linear-gradient(145deg, #ffdce7 0%, #f4a5bd 58%, #e982a7 100%);
+  box-shadow: 0 2px 5px rgb(145 51 67 / 10%);
+  transform-origin: 45% 55%;
+  animation:
+    sakura-fall var(--petal-duration) linear var(--petal-delay) infinite,
+    sakura-sway 2.8s ease-in-out var(--petal-phase) infinite alternate;
+  will-change: transform;
+}
+
+.sakura-petal::after {
+  content: "";
+  width: 32%;
+  height: 34%;
+  position: absolute;
+  top: -2%;
+  right: -2%;
+  border-radius: 0 100% 0 100%;
+  background: rgb(255 245 249 / 82%);
+  transform: rotate(16deg);
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform:
+      translate3d(var(--petal-x), -12vh, 0)
+      rotate(0deg)
+      rotateY(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        calc(var(--petal-x) + (var(--petal-drift) * 0.55)),
+        50vh,
+        0
+      )
+      rotate(calc(var(--petal-spin) * 0.52))
+      rotateY(150deg);
+  }
+
+  100% {
+    transform:
+      translate3d(
+        calc(var(--petal-x) + var(--petal-drift)),
+        112vh,
+        0
+      )
+      rotate(var(--petal-spin))
+      rotateY(320deg);
+  }
+}
+
+@keyframes sakura-sway {
+  from {
+    margin-left: calc(var(--petal-sway) * -0.45);
+  }
+
+  to {
+    margin-left: var(--petal-sway);
+  }
+}
+
+@media (max-width: 760px) {
+  .sakura-petal {
+    opacity: calc(var(--petal-opacity) * 0.78);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sakura-fall {
+    display: none;
+  }
+}
